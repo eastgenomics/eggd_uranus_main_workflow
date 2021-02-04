@@ -12,6 +12,7 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 |multi_fastqc       |v1.1.0|
 |sentieon_tnseq     |2.1.0|
 |cgppindel          |1.0.0|
+|nirvana            |2.1.0|
 |verifybamid        |2.1.0|
 |picardqc           |1.0.0|
 |samtools_flagstat  |1.0.0|
