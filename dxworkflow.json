@@ -160,10 +160,10 @@
             }
           },
           {
-            "$dnanexus_link": "file-G0Y97F0433GqF68j5fvz9fb6"
+            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
           },
           {
-            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
+            "$dnanexus_link": "file-G0Y97F0433GqF68j5fvz9fb6"
           }
         ]
       }
@@ -203,7 +203,7 @@
         },
         "run_CollectTargetedPcrMetrics": true,
         "bedfile": {
-          "$dnanexus_link": "file-FxqKj7041zgFVG0y9kFG7p8Z"
+          "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
         },
         "fasta_index": {
           "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
