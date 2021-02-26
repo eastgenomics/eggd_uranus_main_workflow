@@ -3,14 +3,15 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 
 -------
 
-## Current Version: 1.0.0
+## Current Version: 1.1.0
 
 ## What apps are used in this workflow?
 
 |  App 	| Version  	|
 |---	|---	|
-|multi_fastqc       |v1.1.0|
-|sentieon_tnseq     |2.1.0|
+|multi_fastqc       |1.1.0|
+|sentieon_bwa_mem   |2.1.0|
+|sentieon_bam_to_vcf|2.1.0|_
 |pindel				|1.0.0|
 |cgppindel          |1.0.0|
 |swiss_army_knife	|4.0.1|
