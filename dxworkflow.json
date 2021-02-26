@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.1.0_dev",
-  "title": "uranus_main_workflow_GRCh38_v1.1.0_dev",
+  "name": "uranus_main_workflow_GRCh38_v1.1.0",
+  "title": "uranus_main_workflow_GRCh38_v1.1.0",
   "stages": [
     {
       "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
@@ -28,6 +28,11 @@
         "genome_fastagz": {
           "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         },
+        "somatic_algo": "TNhaplotyper2",
+        "run_bqsr": true,
+        "panel_of_normal_vcfgz": {
+          "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
+        },
         "gatk_resource_bundle": {
           "$dnanexus_link": {
             "project": "project-F3zqGV04fXX5j7566869fjFq",
@@ -39,11 +44,7 @@
             "outputField": "mappings_bam",
             "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
           }
-        },
-        "panel_of_normal_vcfgz": {
-          "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
-        },
-        "somatic_algo": "TNhaplotyper2"
+        }
       }
     },
     {
