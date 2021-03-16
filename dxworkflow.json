@@ -1,2382 +1,341 @@
 {
-    "id": "workflow-G18JB78433Gbf8YJ9BBF2PQZ",
-    "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-    "class": "workflow",
-    "sponsored": false,
-    "name": "uranus_main_workflow_GRCh38_v1.2.0",
-    "types": [],
-    "state": "open",
-    "hidden": false,
-    "links": [],
-    "folder": "/apps_workflows",
-    "tags": [],
-    "created": 1615910173000,
-    "modified": 1615910876862,
-    "createdBy": {
-        "user": "user-jwahn"
+  "name": "uranus_main_workflow_GRCh38_v1.2.0",
+  "title": "uranus_main_workflow_GRCh38_v1.2.0",
+  "stages": [
+    {
+      "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
+      "executable": "applet-FvyXygj433GbKPPY0QY8ZKQG",
+      "folder": "multi_fastqc_v1.1.0"
     },
-    "properties": {},
-    "details": {},
-    "editVersion": 125,
-    "title": "uranus_main_workflow_GRCh38_v1.2.0",
-    "summary": "",
-    "description": "",
-    "outputFolder": null,
-    "temporary": false,
-    "initializedFrom": {
-        "id": "workflow-G0kjFpj433GjqBz5JYKJ5gZ7",
-        "editVersion": 514
+    {
+      "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+      "executable": "app-sentieon-bwa/2.1.0",
+      "folder": "sentieon_bam",
+      "input": {
+        "genome_fastagz": {
+          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+        },
+        "genomebwaindex_targz": {
+          "$dnanexus_link": "file-Fy4p4K040Pgy8XjKG41ZqzxZ"
+        }
+      }
     },
-    "inputs": null,
-    "outputs": null,
-    "stages": [
-        {
-            "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
-            "name": null,
-            "executable": "applet-FvyXygj433GbKPPY0QY8ZKQG",
-            "folder": "multi_fastqc_v1.1.0",
-            "input": {},
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+    {
+      "id": "stage-G0qpY1Q433GpzBp958KJYfBK",
+      "executable": "app-sentieon-tnbam/2.1.0",
+      "folder": "sentieon_vcfs",
+      "input": {
+        "somatic_algo": "TNhaplotyper2",
+        "genome_fastagz": {
+          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         },
-        {
-            "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-            "name": null,
-            "executable": "app-sentieon-bwa/2.1.0",
-            "folder": "sentieon_bam",
-            "input": {
-                "genome_fastagz": {
-                    "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-                },
-                "genomebwaindex_targz": {
-                    "$dnanexus_link": "file-Fy4p4K040Pgy8XjKG41ZqzxZ"
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "gatk_resource_bundle": {
+          "$dnanexus_link": {
+            "project": "project-F3zqGV04fXX5j7566869fjFq",
+            "id": "file-F3zvKp84fXX8qJx43zZXP395"
+          }
         },
-        {
-            "id": "stage-G0qpY1Q433GpzBp958KJYfBK",
-            "name": null,
-            "executable": "app-sentieon-tnbam/2.1.0",
-            "folder": "sentieon_vcfs",
-            "input": {
-                "somatic_algo": "TNhaplotyper2",
-                "genome_fastagz": {
-                    "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-                },
-                "gatk_resource_bundle": {
-                    "$dnanexus_link": {
-                        "project": "project-F3zqGV04fXX5j7566869fjFq",
-                        "id": "file-F3zvKp84fXX8qJx43zZXP395"
-                    }
-                },
-                "panel_of_normal_vcfgz": {
-                    "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
-                },
-                "mappings_bam": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                },
-                "run_bqsr": true
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "panel_of_normal_vcfgz": {
+          "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
         },
-        {
-            "id": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
-            "name": null,
-            "executable": "app-swiss-army-knife/4.0.1",
-            "folder": "germline_risk_remove",
-            "input": {
-                "in": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
-                            "outputField": "variants_vcf"
-                        }
-                    },
-                    {
-                        "$dnanexus_link": {
-                            "project": "container-G0gx4604yP73FP7y9kbp7z8z",
-                            "id": "file-G0gvzfQ433GVp9XBKqV771KG"
-                        }
-                    }
-                ],
-                "cmd": "sh remove_germline_risk_v*.sh"
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "mappings_bam": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
         },
-        {
-            "id": "stage-G18JF28433GkzzVJ3Gk4199k",
-            "name": null,
-            "executable": "app-swiss-army-knife/4.1.1",
-            "folder": "bsvi_vcfs",
-            "input": {
-                "in": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
-                            "outputField": "out"
-                        }
-                    },
-                    {
-                        "$dnanexus_link": "file-G18J8b0433Gg33VJ8x9qPbfk"
-                    },
-                    {
-                        "$dnanexus_link": "file-G18J8pj433GzpFpF9F9q0Y64"
-                    },
-                    {
-                        "$dnanexus_link": "file-G18J8gj433GXK64g20jGY017"
-                    }
-                ],
-                "cmd": "sh swiss_army_cmd_line.sh"
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "run_bqsr": true
+      }
+    },
+    {
+      "id": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
+      "executable": "app-swiss-army-knife/4.0.1",
+      "folder": "germline_risk_remove",
+      "input": {
+        "in": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
+              "outputField": "variants_vcf"
+            }
+          },
+          {
+            "$dnanexus_link": {
+              "project": "container-G0kxV484p9P1bf2qgV7Z7J5q",
+              "id": "file-G0gvzfQ433GVp9XBKqV771KG"
+            }
+          }
+        ],
+        "cmd": "sh remove_germline_risk_v*.sh"
+      }
+    },
+    {
+      "id": "stage-G18JF28433GkzzVJ3Gk4199k",
+      "executable": "app-swiss-army-knife/4.1.1",
+      "folder": "bsvi_vcfs",
+      "input": {
+        "in": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
+              "outputField": "out"
+            }
+          },
+          {
+            "$dnanexus_link": "file-G18J8b0433Gg33VJ8x9qPbfk"
+          },
+          {
+            "$dnanexus_link": "file-G18J8pj433GzpFpF9F9q0Y64"
+          },
+          {
+            "$dnanexus_link": "file-G18J8gj433GXK64g20jGY017"
+          }
+        ],
+        "cmd": "sh swiss_army_cmd_line.sh"
+      }
+    },
+    {
+      "id": "stage-G0KbXP0433GXJyYVFfQvqKQQ",
+      "executable": "applet-FyFKBV841zg66G9447B0xKVQ",
+      "folder": "pindel_v1.0.0",
+      "input": {
+        "insert_size": 250,
+        "vcf_gatk_compatible": true,
+        "export_vcf_advanced_options": "-R hg38 -d 25009 --min_size 1 --min_coverage 10 --min_supporting_reads 5",
+        "reference_fasta": {
+          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         },
-        {
-            "id": "stage-G0KbXP0433GXJyYVFfQvqKQQ",
-            "name": null,
-            "executable": "applet-FyFKBV841zg66G9447B0xKVQ",
-            "folder": "pindel_v1.0.0",
-            "input": {
-                "insert_size": 250,
-                "vcf_gatk_compatible": true,
-                "export_vcf_advanced_options": "-R hg38 -d 25009 --min_size 1 --min_coverage 10 --min_supporting_reads 5",
-                "reference_fasta": {
-                    "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-                },
-                "fasta_index": {
-                    "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-                },
-                "mappings_files": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                            "outputField": "mappings_bam"
-                        }
-                    }
-                ],
-                "bam_index_files": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                            "outputField": "mappings_bam_bai"
-                        }
-                    }
-                ]
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "fasta_index": {
+          "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
         },
-        {
-            "id": "stage-G0Y8730433Gb8g1g71jQJBZQ",
-            "name": null,
-            "executable": "app-swiss-army-knife/4.0.1",
-            "folder": "pindel_filtering_v1.0.0",
-            "input": {
-                "in": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G0KbXP0433GXJyYVFfQvqKQQ",
-                            "outputField": "vcf"
-                        }
-                    },
-                    {
-                        "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
-                    },
-                    {
-                        "$dnanexus_link": "file-G0kpq7Q433Gj2XQ89FXYpBzq"
-                    }
-                ],
-                "cmd": "sh pindel_filtering_v*.sh"
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "mappings_files": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+              "outputField": "mappings_bam"
+            }
+          }
+        ],
+        "bam_index_files": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+              "outputField": "mappings_bam_bai"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-G0Y8730433Gb8g1g71jQJBZQ",
+      "executable": "app-swiss-army-knife/4.0.1",
+      "folder": "pindel_filtering_v1.0.0",
+      "input": {
+        "in": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0KbXP0433GXJyYVFfQvqKQQ",
+              "outputField": "vcf"
+            }
+          },
+          {
+            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
+          },
+          {
+            "$dnanexus_link": "file-G0kpq7Q433Gj2XQ89FXYpBzq"
+          }
+        ],
+        "cmd": "sh pindel_filtering_v*.sh"
+      }
+    },
+    {
+      "id": "stage-G02ZFz0433GpQB4j9Gvg0b81",
+      "executable": "applet-G00xzx04J7BZ0684489Gpv8Q",
+      "folder": "cgppindel_v1.0.0",
+      "input": {
+        "docker_image": {
+          "$dnanexus_link": "file-Fz0KxFj4KB7fxxZ06vy2B2P3"
         },
-        {
-            "id": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "name": null,
-            "executable": "applet-G00xzx04J7BZ0684489Gpv8Q",
-            "folder": "cgppindel_v1.0.0",
-            "input": {
-                "docker_image": {
-                    "$dnanexus_link": "file-Fz0KxFj4KB7fxxZ06vy2B2P3"
-                },
-                "reference": {
-                    "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-                },
-                "simrep": {
-                    "$dnanexus_link": "file-Fz0Q2GQ41zgB8BK7143y65Q1"
-                },
-                "reference_index": {
-                    "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-                },
-                "simrep_index": {
-                    "$dnanexus_link": "file-Fz0Q2Kj41zg0Fgk4G70P9P1X"
-                },
-                "unmatched": {
-                    "$dnanexus_link": "file-Fz8Q0vj41zg6j03fP1vbvfFp"
-                },
-                "filter": {
-                    "$dnanexus_link": "file-Fz8xvQj41zgGg10ZJzx8Qz53"
-                },
-                "normal": {
-                    "$dnanexus_link": "file-Fy9BXxQ40vjGfxP46Jb78Xf1"
-                },
-                "normal_index": {
-                    "$dnanexus_link": "file-Fy9BXxQ40vj7qPJq1Kppjx0F"
-                },
-                "genes": {
-                    "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-                },
-                "tumour": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                },
-                "tumour_index": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam_bai"
-                    }
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "reference": {
+          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         },
-        {
-            "id": "stage-G0Y87ZQ433Gy6y7vBB74p30j",
-            "name": null,
-            "executable": "app-swiss-army-knife/4.0.1",
-            "folder": "cgppindel_filtering_v1.0.0",
-            "input": {
-                "cmd": "sh cgppindel_filtering_v*.sh",
-                "in": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-                            "outputField": "output_vcf"
-                        }
-                    },
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-                            "outputField": "vcf_index"
-                        }
-                    },
-                    {
-                        "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
-                    },
-                    {
-                        "$dnanexus_link": "file-G0Y97F0433GqF68j5fvz9fb6"
-                    }
-                ]
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "simrep": {
+          "$dnanexus_link": "file-Fz0Q2GQ41zgB8BK7143y65Q1"
         },
-        {
-            "id": "stage-G0KbB6Q433GyV6vbJZKVYV96",
-            "name": null,
-            "executable": "applet-G0Kb58Q433GVv31xKZXF169k",
-            "folder": "verifybamid_v2.1.0",
-            "input": {
-                "vcf_file": {
-                    "$dnanexus_link": "file-G07zJxj41zgF593x6j7bqZ7X"
-                },
-                "input_bam": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                },
-                "input_bam_index": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam_bai"
-                    }
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "reference_index": {
+          "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
         },
-        {
-            "id": "stage-Fy0549Q41zg02Kjg05x69yvK",
-            "name": null,
-            "executable": "applet-Fp69k884qBzVfbvP812F92gG",
-            "folder": "eggd_picardqc_v1.0.0",
-            "input": {
-                "run_CollectTargetedPcrMetrics": true,
-                "fasta_index": {
-                    "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
-                },
-                "bedfile": {
-                    "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
-                },
-                "sorted_bam": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "simrep_index": {
+          "$dnanexus_link": "file-Fz0Q2Kj41zg0Fgk4G70P9P1X"
         },
-        {
-            "id": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG",
-            "name": null,
-            "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
-            "folder": "samtools_flagstat_v1.0.0",
-            "input": {
-                "input_bam": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                },
-                "input_bam_index": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam_bai"
-                    }
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "unmatched": {
+          "$dnanexus_link": "file-Fz8Q0vj41zg6j03fP1vbvfFp"
         },
-        {
-            "id": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-            "name": null,
-            "executable": "applet-Fxq07gQ433Gyz14j5ZZ1fzk1",
-            "folder": "eggd_mosdepth_v1.0.1",
-            "input": {
-                "bed": {
-                    "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-                },
-                "bam": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                },
-                "index": {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam_bai"
-                    }
-                }
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "filter": {
+          "$dnanexus_link": "file-Fz8xvQj41zgGg10ZJzx8Qz53"
         },
-        {
-            "id": "stage-G02ZG6Q433GV76v29b6Gggjp",
-            "name": null,
-            "executable": "applet-FykqQzj433GbQXFqJY70jFvJ",
-            "folder": "athena_v1.0.3",
-            "input": {
-                "thresholds": "100, 250, 500, 1000, 1500",
-                "cutoff_threshold": 250,
-                "summary": true,
-                "panel_bed": {
-                    "$dnanexus_link": "file-FybxKB041zg3PgQ467BfFYKq"
-                },
-                "exons_nirvana": {
-                    "$dnanexus_link": "file-FybxJ4Q41zgP75z7B2F1jbgg"
-                },
-                "snps": [
-                    {
-                        "$dnanexus_link": "file-FyZfyqQ41zg5FjK2GykYfKq8"
-                    }
-                ],
-                "mosdepth_files": [
-                    {
-                        "$dnanexus_link": {
-                            "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-                            "outputField": "mosdepth_output"
-                        }
-                    }
-                ]
-            },
-            "executionPolicy": {},
-            "systemRequirements": {},
-            "accessible": true
+        "normal": {
+          "$dnanexus_link": "file-Fy9BXxQ40vjGfxP46Jb78Xf1"
+        },
+        "normal_index": {
+          "$dnanexus_link": "file-Fy9BXxQ40vj7qPJq1Kppjx0F"
+        },
+        "genes": {
+          "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
+        },
+        "tumour": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
+        },
+        "tumour_index": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam_bai"
+          }
         }
-    ],
-    "inputSpec": [
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.fastqs",
-            "class": "array:file",
-            "label": "An array of fastq files",
-            "help": "",
-            "optional": false,
-            "patterns": [
-                "*.fastq.gz",
-                "*.fq.gz"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.contaminants_txt",
-            "class": "file",
-            "label": "Custom contaminants",
-            "help": "(Optional) A special file containing custom contaminant sequences to screen overrepresented sequences against. If left empty, a default set of contaminants that comes with the FastQC package will be used. If provided, this file must be a text file with two tab-delimited columns: name (such as 'Truseq Adapter') and DNA sequence (such as 'TATCTCGTATG').",
-            "optional": true,
-            "patterns": [
-                "*.fastqc_contaminants.txt"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.adapters_txt",
-            "class": "file",
-            "label": "Custom adapters",
-            "help": "(Optional) A special file containing custom adapter sequences which will be explicity searched against the library. If left empty, a default set of adapters that comes with the FastQC package will be used. If provided, this file must be a text file with two tab-delimited columns: name (such as 'Nextera Transposase Sequence') and DNA sequence (such as 'CTGTCTCTTATA').",
-            "optional": true,
-            "patterns": [
-                "*.fastqc_adapters.txt"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.limits_txt",
-            "class": "file",
-            "label": "Custom limits",
-            "help": "(Optional) A special file containing a set of criteria which will be used to determine the warn/error limits for the various modules, or selectively remove some modules from the output altogether. For an example of a limits file, refer to the limits.txt file in the FastQC sources.",
-            "optional": true,
-            "patterns": [
-                "*.fastqc_limits.txt"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.kmer_size",
-            "class": "int",
-            "default": 7,
-            "label": "Kmer size",
-            "help": "The kmer size that the kmer analysis module will use. This module reports overrepresented k-mers (sequences of size 'k'). This size must be between 2 and 10 (default is 7).",
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J: Advanced"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.nogroup",
-            "class": "boolean",
-            "default": true,
-            "label": "Disable grouping of bases past 50bp?",
-            "help": "Disable grouping of bases for reads >50bp. All reports will show data for every base in the read. WARNING: Using this option may cause fastqc to slow down or crash if used on really long reads, and resulting plots may be too large for practical viewing.",
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J: Advanced"
-        },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.extra_options",
-            "class": "string",
-            "label": "Extra command-line options",
-            "help": "(Optional) Extra command-line options that will be passed directly to the fastqc invocation. Example: --nofilter.",
-            "optional": true,
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J: Advanced"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.reads_fastqgzs",
-            "class": "array:file",
-            "label": "Reads",
-            "help": "An array of files, in gzipped FASTQ format, with the first read mates to be mapped.",
-            "optional": false,
-            "patterns": [
-                "*.fq.gz",
-                "*.fastq.gz"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.reads2_fastqgzs",
-            "class": "array:file",
-            "label": "Reads (right mates)",
-            "help": "(Optional) An array of files, in gzipped FASTQ format, with the second read mates to be mapped.",
-            "optional": true,
-            "patterns": [
-                "*.fq.gz",
-                "*.fastq.gz"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.rg_info_csv",
-            "class": "file",
-            "label": "Read group information",
-            "help": "(Optional) A file, in CSV format, with each row describing RG tag information for each (pair) of read files in the following order: read_filename, RG ID, RG LB, RG PU. This file needs to cover and match all FASTQ filenames of \"Reads\" (reads_fastqgzs).",
-            "optional": true,
-            "patterns": [
-                "*.csv"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.genomebwaindex_targz",
-            "class": "file",
-            "label": "BWA reference genome index",
-            "help": "A file, in gzipped tar archive format, with the reference genome sequence already indexed with BWA.",
-            "optional": false,
-            "suggestions": [
-                {
-                    "project": "project-BQpp3Y804Y0xbyG4GJPQ01xv",
-                    "path": "/",
-                    "region": "aws:us-east-1",
-                    "name": "DNAnexus Reference Genomes: AWS US-east"
-                },
-                {
-                    "project": "project-Bxv84pQ27z999kj0jbQz0FK9",
-                    "path": "/",
-                    "region": "aws:cn-north-1",
-                    "name": "DNAnexus Reference Genomes: AWS China-north"
-                },
-                {
-                    "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
-                    "path": "/",
-                    "region": "aws:eu-central-1",
-                    "name": "DNAnexus Reference Genomes: AWS Germany"
-                },
-                {
-                    "project": "project-FGX8gVQB9X7K5f1pKfPvz9yG",
-                    "path": "/",
-                    "region": "azure:westeurope",
-                    "name": "DNAnexus Reference Genomes: Azure Amsterdam"
-                },
-                {
-                    "project": "project-F4gXb605fKQyBq5vJBG31KGG",
-                    "path": "/",
-                    "region": "aws:ap-southeast-2",
-                    "name": "DNAnexus Reference Genomes: AWS Sydney"
-                },
-                {
-                    "project": "project-F0yyz6j9Jz8YpxQV8B8Kk7Zy",
-                    "path": "/",
-                    "region": "azure:westus",
-                    "name": "DNAnexus Reference Genomes: Azure West US"
-                }
-            ],
-            "patterns": [
-                "*.bwa-index.tar.gz"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-            "default": {
-                "$dnanexus_link": "file-Fy4p4K040Pgy8XjKG41ZqzxZ"
+      }
+    },
+    {
+      "id": "stage-G0Y87ZQ433Gy6y7vBB74p30j",
+      "executable": "app-swiss-army-knife/4.0.1",
+      "folder": "cgppindel_filtering_v1.0.0",
+      "input": {
+        "cmd": "sh cgppindel_filtering_v*.sh",
+        "in": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
+              "outputField": "output_vcf"
             }
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.genome_fastagz",
-            "class": "file",
-            "label": "Reference genome FASTA file",
-            "help": "A file, in gzipped format, with the reference genome sequence. Please make sure this is the same build as the one used above for the BWA reference genome index.",
-            "optional": false,
-            "suggestions": [
-                {
-                    "project": "project-BQpp3Y804Y0xbyG4GJPQ01xv",
-                    "path": "/",
-                    "region": "aws:us-east-1",
-                    "name": "DNAnexus Reference Genomes: AWS US-east"
-                },
-                {
-                    "project": "project-Bxv84pQ27z999kj0jbQz0FK9",
-                    "path": "/",
-                    "region": "aws:cn-north-1",
-                    "name": "DNAnexus Reference Genomes: AWS China-north"
-                },
-                {
-                    "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
-                    "path": "/",
-                    "region": "aws:eu-central-1",
-                    "name": "DNAnexus Reference Genomes: AWS Germany"
-                },
-                {
-                    "project": "project-FGX8gVQB9X7K5f1pKfPvz9yG",
-                    "path": "/",
-                    "region": "azure:westeurope",
-                    "name": "DNAnexus Reference Genomes: Azure Amsterdam"
-                },
-                {
-                    "project": "project-F4gXb605fKQyBq5vJBG31KGG",
-                    "path": "/",
-                    "region": "aws:ap-southeast-2",
-                    "name": "DNAnexus Reference Genomes: AWS Sydney"
-                },
-                {
-                    "project": "project-F0yyz6j9Jz8YpxQV8B8Kk7Zy",
-                    "path": "/",
-                    "region": "azure:westus",
-                    "name": "DNAnexus Reference Genomes: Azure West US"
-                }
-            ],
-            "patterns": [
-                "*.fa*.gz"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-            "default": {
-                "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+          },
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
+              "outputField": "vcf_index"
             }
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.read_group_platform",
-            "class": "string",
-            "default": "ILLUMINA",
-            "label": "Read group platform",
-            "help": "This is a string (without spaces) describing the platform/technology used to produce the reads. The read group platform will appear in the read group information in the BAM file (as RG PL tag).",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Sample Information",
-            "choices": [
-                "ILLUMINA",
-                "SOLID",
-                "LS454",
-                "HELICOS",
-                "PACBIO"
-            ]
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.sample",
-            "class": "string",
-            "label": "Sample ID",
-            "help": "(Optional) A string (without spaces) describing the sample. This Sample ID will appear in the read group information in the BAM file (as RG SM tag) and in the sample information in the VCF file. The output files will be prefixed by this string. If not specified, the Sample ID will be set as the prefix of the FASTQ filename.",
-            "optional": true,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Sample Information"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.stream_inputs",
-            "class": "boolean",
-            "default": true,
-            "label": "Stream Input Reads?",
-            "help": "Selecting this option will stream in input FASTQ files and potentially speed-up the calcualtion. Default is true. Streaming the inputs may cause an input data access issue for very large FASTQ files, if that is the case, you should try rerunning the job with this option off.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Input Options"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.output_format",
-            "class": "string",
-            "default": "BAM",
-            "label": "Output a BAM or a CRAM file?",
-            "help": "Selecting \"BAM\" will create an output file in BAM format, while selecting \"CRAM\" will create an output file in CRAM format. Default is BAM.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Output Options",
-            "choices": [
-                "BAM",
-                "CRAM"
-            ]
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.output_metrics",
-            "class": "boolean",
-            "default": false,
-            "label": "Calculate and output the BAM metrics?",
-            "help": "Selecting this option will calculate and output the following metrics of the BAM file: Base Quality Score Distribution (QualDistribution), Insert Size Distribution (InsertSize), Alignment Statistics (AlignmentStat), GC Bias (GCBias and GCBiasSummary), Mean Base Quality Score per Sequencing Cycle (MeanQualityByCycle) and Deduplication. Default is false.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Output Options"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.output_md5sum",
-            "class": "boolean",
-            "default": false,
-            "label": "Calculate output md5sum",
-            "help": "Calculate and output md5sum files for BAM, CRAM and VCF outputs",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Output Options"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.mark_or_remove_duplicate",
-            "class": "string",
-            "default": "mark_duplicate",
-            "label": "Mark or remove duplicated reads?",
-            "help": "Selecting \"mark_duplicate\" will mark duplicated reads and keep all reads in the output BAM file. Selecting \"remove_duplicate\" will remove the duplicated reads. Default is mark duplicated reads. Selecting \"none\" will not perform any deduplication, which is recommended when using amplicon sequencing data.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Algorithm Options",
-            "choices": [
-                "mark_duplicate",
-                "remove_duplicate",
-                "none"
-            ]
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.extra_bwa_options",
-            "class": "string",
-            "default": "-K 10000000",
-            "label": "Extra BWA Options",
-            "help": "(Optional) Extra BWA options.",
-            "optional": true,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.bwa_nonverbose",
-            "class": "boolean",
-            "default": false,
-            "label": "Reduce BWA logs",
-            "help": "Selecting this option will reduce the log messages from BWA; this may be useful when running with very large samples, to make sure that the log does not reach the size limit.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Advanced Options"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.bam_compression",
-            "class": "string",
-            "default": "1",
-            "label": "Intermediate BAM compression",
-            "help": "Compression of the intermediate BAM files. Using the default 1 will achieve the fastest processing, while selecting 6 or 9 will reduce the intermediate storage requirements at the expese of a slower processing.",
-            "optional": false,
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV: Advanced Options",
-            "choices": [
-                "1",
-                "6",
-                "9"
-            ]
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.mappings_bam",
-            "class": "file",
-            "label": "Tumor Reads",
-            "help": "The file containig the reads for the tumor sample.",
-            "optional": false,
-            "patterns": [
-                "*.bam",
-                "*.cram"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.recal_table",
-            "class": "file",
-            "label": "Tumor Recalibration Table",
-            "help": "(Optional) The corresponding recalibration table for the tumor sample if Base Quality Score Recalibration was already performed.",
-            "optional": true,
-            "patterns": [
-                "*.recalibration_table"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.normal_mappings_bam",
-            "class": "file",
-            "label": "Normal Reads",
-            "help": "(Optional) The file containing the reads for the normal sample.",
-            "optional": true,
-            "patterns": [
-                "*.bam",
-                "*.cram"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.normal_recal_table",
-            "class": "file",
-            "label": "Normal Recalibration Table",
-            "help": "(Optional) The corresponding recalibration table for the normal sample if Base Quality Score Recalibration was already performed.",
-            "optional": true,
-            "patterns": [
-                "*.recalibration_table"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.genome_fastagz",
-            "class": "file",
-            "label": "Reference genome FASTA file",
-            "help": "A file, in gzipped format, with the reference genome sequence. Please make sure this is the same build as the one used above for the BWA reference genome index.",
-            "optional": false,
-            "suggestions": [
-                {
-                    "project": "project-BQpp3Y804Y0xbyG4GJPQ01xv",
-                    "path": "/",
-                    "region": "aws:us-east-1",
-                    "name": "DNAnexus Reference Genomes: AWS US-east"
-                },
-                {
-                    "project": "project-Bxv84pQ27z999kj0jbQz0FK9",
-                    "path": "/",
-                    "region": "aws:cn-north-1",
-                    "name": "DNAnexus Reference Genomes: AWS China-north"
-                },
-                {
-                    "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
-                    "path": "/",
-                    "region": "aws:eu-central-1",
-                    "name": "DNAnexus Reference Genomes: AWS Germany"
-                },
-                {
-                    "project": "project-FGX8gVQB9X7K5f1pKfPvz9yG",
-                    "path": "/",
-                    "region": "azure:westeurope",
-                    "name": "DNAnexus Reference Genomes: Azure Amsterdam"
-                },
-                {
-                    "project": "project-F4gXb605fKQyBq5vJBG31KGG",
-                    "path": "/",
-                    "region": "aws:ap-southeast-2",
-                    "name": "DNAnexus Reference Genomes: AWS Sydney"
-                },
-                {
-                    "project": "project-F0yyz6j9Jz8YpxQV8B8Kk7Zy",
-                    "path": "/",
-                    "region": "azure:westus",
-                    "name": "DNAnexus Reference Genomes: Azure West US"
-                }
-            ],
-            "patterns": [
-                "*.fa*.gz"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK",
-            "default": {
-                "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-            }
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.gatk_resource_bundle",
-            "class": "file",
-            "label": "GATK resource bundle",
-            "help": "(Optional) A bundle containing known SNPs, mutations and indels.",
-            "optional": true,
-            "suggestions": [
-                {
-                    "project": "project-B6JG85Z2J35vb6Z7pQ9Q02j8",
-                    "path": "/sentieon_resources",
-                    "region": "aws:us-east-1",
-                    "name": "Sentieon GATK Bundles: AWS US-east"
-                },
-                {
-                    "project": "project-F29KXx020fXF13JyFQ4qQvB4",
-                    "path": "/sentieon_resources",
-                    "region": "aws:cn-north-1",
-                    "name": "Sentieon GATK Bundles: AWS China-north"
-                },
-                {
-                    "project": "project-F3zqGV04fXX5j7566869fjFq",
-                    "path": "/sentieon_resources",
-                    "region": "aws:eu-central-1",
-                    "name": "Sentieon GATK Bundles: AWS Germany"
-                },
-                {
-                    "project": "project-FGXfq9QBy7Zv5BYQ9Yvqj9Xv",
-                    "path": "/sentieon_resources",
-                    "region": "azure:westeurope",
-                    "name": "Sentieon GATK Bundles: Azure Amsterdam"
-                },
-                {
-                    "project": "project-F4gYG1850p1JXzjp95PBqzY5",
-                    "path": "/sentieon_resources",
-                    "region": "aws:ap-southeast-1",
-                    "name": "Sentieon GATK Bundles: AWS Sydney"
-                },
-                {
-                    "project": "project-F29g0xQ90fvQf5z1BX6b5106",
-                    "path": "/sentieon_resources",
-                    "region": "azure:westus",
-                    "name": "Sentieon GATK Bundles: Azure West US"
-                }
-            ],
-            "patterns": [
-                "*.resource.bundle.tar.gz"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK",
-            "default": {
-                "$dnanexus_link": {
-                    "project": "project-F3zqGV04fXX5j7566869fjFq",
-                    "id": "file-F3zvKp84fXX8qJx43zZXP395"
-                }
-            }
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.targets_bed",
-            "class": "array:file",
-            "label": "Target coordinates",
-            "help": "(Optional) A BED file with target coordinates. If given, processing will be restricted to only inside those coordinates. NOTE: Providing this coordinates has priority over the option of \"Ignore the decoy regions\". The variant calling will be within the regions provided.",
-            "optional": true,
-            "patterns": [
-                "*.bed"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.panel_of_normal_vcfgz",
-            "class": "file",
-            "label": "Panel of Normals",
-            "help": "(Optional) A file, in bgzipped VCF format, containing the variants detected in the Panel of Normals analysis that will be used to remove false positives.",
-            "optional": true,
-            "patterns": [
-                "*.vcf.gz"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK",
-            "default": {
-                "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
-            }
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.germline_vcfgz",
-            "class": "file",
-            "label": "TNhaplotyper2 Germline VCF",
-            "help": "(Optional) A file, in bgzipped VCF format, containing the population allele frequency. This file is only used with TNhaplotyper2",
-            "optional": true,
-            "patterns": [
-                "*.vcf.gz"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.ml_model",
-            "class": "file",
-            "label": "Machine Learning model for TNscope",
-            "help": "(Optional) A model file that will be used to perform machine learning variant filtration after TNscope. When using this input you should set the corresponding special settings in the Extra TNscope Options.",
-            "optional": true,
-            "suggestions": [
-                {
-                    "project": "project-B6JG85Z2J35vb6Z7pQ9Q02j8",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "aws:us-east-1",
-                    "name": "Sentieon TNscope Machine Learning Models: AWS US-east"
-                },
-                {
-                    "project": "project-F29KXx020fXF13JyFQ4qQvB4",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "aws:cn-north-1",
-                    "name": "Sentieon TNscope Machine Learning Models: AWS China-north"
-                },
-                {
-                    "project": "project-F3zqGV04fXX5j7566869fjFq",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "aws:eu-central-1",
-                    "name": "Sentieon TNscope Machine Learning Models: AWS Germany"
-                },
-                {
-                    "project": "project-FGXfq9QBy7Zv5BYQ9Yvqj9Xv",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "azure:westeurope",
-                    "name": "Sentieon TNscope Machine Learning Models: Azure Amsterdam"
-                },
-                {
-                    "project": "project-F4gYG1850p1JXzjp95PBqzY5",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "aws:ap-southeast-1",
-                    "name": "Sentieon TNscope Machine Learning Models: AWS Sydney"
-                },
-                {
-                    "project": "project-F29g0xQ90fvQf5z1BX6b5106",
-                    "path": "/sentieon_resources/Machine_Learning_Models/TNscope_Models",
-                    "region": "azure:westus",
-                    "name": "Sentieon TNscope Machine Learning Models: Azure West US"
-                }
-            ],
-            "patterns": [
-                "*.model"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.output_md5sum",
-            "class": "boolean",
-            "default": false,
-            "label": "Calculate output md5sum",
-            "help": "Calculate and output md5sum files for BAM, CRAM and VCF outputs",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Output Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.run_realign",
-            "class": "boolean",
-            "default": false,
-            "label": "Perfrom INDEL realignment on individual samples?",
-            "help": "Selecting this option will perform individual INDEL realignment of the tumor and the normal sample before BQSR. This option is not recommended for Haplotype based callers such as TNhaplotyper2 or TNscope, but is provided for backward compatibility.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.run_bqsr",
-            "class": "boolean",
-            "default": true,
-            "label": "Perfrom Base Quality Score Recalibration?",
-            "help": "Selecting this option will perform BQSR. This option will be ignored if you input a recalibration table.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.run_corealign",
-            "class": "boolean",
-            "default": false,
-            "label": "Perfrom INDEL co-realignment?",
-            "help": "Selecting this option will perform INDEL realignment of the tumor and the normal sample after BQSR. This option is not recommended for Haplotype based callers such as TNhaplotyper2 or TNscope, but is provided for backward compatibility.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.ignore_decoy",
-            "class": "boolean",
-            "default": true,
-            "label": "Ignore the decoy regions (i.e. ignore the sponge regions for variant calling)?",
-            "help": "Selecting this option will ignore the decoy regions (i.e. chromosomes w/ names as \"hs37d5\", \"chrEBV\", or \"hs38d1\") for variant calling, and will reduce the time cost performing the pipeline. NOTE: if the target coordinates BED file is provided, the applet will then only call variants within the target regions.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.somatic_algo",
-            "class": "string",
-            "default": "TNhaplotyper2",
-            "label": "Which somatic algorithm to use?",
-            "help": "Selecting \"TNscope\" will call variants using Sentieon TNscope, while selecting \"TNhaplotyper2\" will call variants using TNhaplotyper2, which is Sentieon implementation of GATK4 Mutect2. Default is TNscope.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options",
-            "choices": [
-                "TNscope",
-                "TNhaplotyper2"
-            ]
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.ML_THRESHOLD",
-            "class": "string",
-            "default": "0.81",
-            "label": "Threshold for TNscope machine learning model",
-            "help": "(Optional) Threshold for the probability that a variant is true according to the TNscope model. Tis input is ony relevant when using TNscope and inpputting a model.",
-            "optional": true,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.tnscope_driver_options",
-            "class": "string",
-            "default": "",
-            "label": "Extra TNscope driver Options",
-            "help": "(Optional) Extra options that are driver-level parameters for the TNscope/TNhaplotyper2 algorithm.",
-            "optional": true,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.tnscope_algo_options",
-            "class": "string",
-            "default": "",
-            "label": "Extra TNscope Options",
-            "help": "(Optional) Extra options that are algo-level parameters for the TNscope/TNhaplotyper2 algorithm.",
-            "optional": true,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.tnhapfilter_algo_options",
-            "class": "string",
-            "default": "",
-            "label": "Extra tnhapfilter Options",
-            "help": "(Optional) Extra options that are algo-level parameters for the tnhapfilter algorithm.",
-            "optional": true,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Algorithm Options"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.bam_compression",
-            "class": "string",
-            "default": "1",
-            "label": "Intermediate BAM compression",
-            "help": "Compression of the intermediate BAM files. Using the default 1 will achieve the fastest processing, while selecting 6 or 9 will reduce the intermediate storage requirements at the expese of a slower processing.",
-            "optional": false,
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK: Advanced Options",
-            "choices": [
-                "1",
-                "6",
-                "9"
-            ]
-        },
-        {
-            "name": "stage-G0gx0zQ433GkVKk6KBQjJ2f3.in",
-            "class": "array:file",
-            "label": "Input files",
-            "help": "(Optional) Files to download to instance temporary folder before command is executed.",
-            "optional": true,
-            "group": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
-                        "outputField": "variants_vcf"
-                    }
-                },
-                {
-                    "$dnanexus_link": {
-                        "project": "container-G0gx4604yP73FP7y9kbp7z8z",
-                        "id": "file-G0gvzfQ433GVp9XBKqV771KG"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "stage-G0gx0zQ433GkVKk6KBQjJ2f3.cmd",
-            "class": "string",
-            "label": "Command line",
-            "help": "Command to execute on instance. View the app readme for details.",
-            "group": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
-            "default": "sh remove_germline_risk_v*.sh"
-        },
-        {
-            "name": "stage-G0gx0zQ433GkVKk6KBQjJ2f3.image",
-            "class": "string",
-            "label": "Optional Docker image identifier",
-            "help": "(Optional) Instead of using the default Ubuntu 20.04 environment, the input command will be run using the specified Docker image as it would be when running 'docker run image cmd'. Example image identifiers are 'ubuntu:18.04', 'quay.io/ucsc_cgl/samtools'.",
-            "optional": true,
-            "group": "stage-G0gx0zQ433GkVKk6KBQjJ2f3"
-        },
-        {
-            "name": "stage-G0gx0zQ433GkVKk6KBQjJ2f3.mount_inputs",
-            "class": "boolean",
-            "default": false,
-            "label": "Whether to use \"dx-mount-all-inputs\"?",
-            "help": "(Optional) Whether to mount all files that were supplied as inputs to the app instead of downloading them to the local storage of the execution worker.",
-            "optional": true,
-            "group": "stage-G0gx0zQ433GkVKk6KBQjJ2f3"
-        },
-        {
-            "name": "stage-G18JF28433GkzzVJ3Gk4199k.in",
-            "class": "array:file",
-            "label": "Input files",
-            "help": "(Optional) Files to download to instance temporary folder before command is executed.",
-            "optional": true,
-            "group": "stage-G18JF28433GkzzVJ3Gk4199k",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0gx0zQ433GkVKk6KBQjJ2f3",
-                        "outputField": "out"
-                    }
-                },
-                {
-                    "$dnanexus_link": "file-G18J8b0433Gg33VJ8x9qPbfk"
-                },
-                {
-                    "$dnanexus_link": "file-G18J8pj433GzpFpF9F9q0Y64"
-                },
-                {
-                    "$dnanexus_link": "file-G18J8gj433GXK64g20jGY017"
-                }
-            ]
-        },
-        {
-            "name": "stage-G18JF28433GkzzVJ3Gk4199k.cmd",
-            "class": "string",
-            "label": "Command line",
-            "help": "Command to execute on instance. View the app readme for details.",
-            "group": "stage-G18JF28433GkzzVJ3Gk4199k",
-            "default": "sh swiss_army_cmd_line.sh"
-        },
-        {
-            "name": "stage-G18JF28433GkzzVJ3Gk4199k.image",
-            "class": "string",
-            "label": "Optional Docker image identifier",
-            "help": "(Optional) Instead of using the default Ubuntu 20.04 environment, the input command will be run using the specified Docker image as it would be when running 'docker run image cmd'. Example image identifiers are 'ubuntu:18.04', 'quay.io/ucsc_cgl/samtools'.",
-            "optional": true,
-            "group": "stage-G18JF28433GkzzVJ3Gk4199k"
-        },
-        {
-            "name": "stage-G18JF28433GkzzVJ3Gk4199k.mount_inputs",
-            "class": "boolean",
-            "default": false,
-            "label": "Whether to use \"dx-mount-all-inputs\"?",
-            "help": "(Optional) Whether to mount all files that were supplied as inputs to the app instead of downloading them to the local storage of the execution worker.",
-            "optional": true,
-            "group": "stage-G18JF28433GkzzVJ3Gk4199k"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.reference_fasta",
-            "class": "file",
-            "label": "Reference Genome Sequence (FASTA)",
-            "help": "The reference genome sequences in fasta format. App will accept compressed FASTA. REQUIRED",
-            "optional": false,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "patterns": [
-                "*.fa*"
-            ],
-            "default": {
-                "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-            }
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.mappings_files",
-            "class": "array:file",
-            "label": "Mappings BAM/Pindel file",
-            "help": "BAM or Pindel input file(s) containing mappings you want to search for indels and structural variations. BAM files MUST have .bam extension AND either insert size or bam config file is required as additional input. REQUIRED.",
-            "optional": false,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.bam_config_file",
-            "class": "file",
-            "label": "BAM Configuration File",
-            "help": "If mappings were generated by BWA/MOSAIK, it is RECOMMENDED to input a bam configuration text file containing the names (names-ONLY, no path) of the BAM-files one wants to search for indels and structural variations. Pindel performance will be faster with config file. On each line, list the name of the bam-file, the insert size (length of sequence between the paired-end adapters in paired-end sequence), and the label for the sample. Example: \ntumor_sample.bam\t250\tTUMOR",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.fasta_index",
-            "class": "file",
-            "label": "FASTA index (from samtools faidx)",
-            "help": "The reference genome index generated by samtools. If not provided, app will use samtools create and return bam index files. RECOMMENDED",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "patterns": [
-                "*.fa.fai"
-            ],
-            "default": {
-                "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-            }
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.bam_index_files",
-            "class": "array:file",
-            "label": "BAM Index File",
-            "help": "If mappings are BAM files, provide a BAM index file for each mappings BAM file(s). BAM index file names must match BAM files (ex: file1.bam and file1.bam.bai). If not provided, app will sort (if assume_sorted is set to false) and index mappings BAM file, increasing runtime.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "patterns": [
-                "*.bam.bai"
-            ],
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                        "outputField": "mappings_bam_bai"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.breakdancer_calls_file",
-            "class": "file",
-            "label": "Breakdancer (or other SV) Calls File",
-            "help": "Option to include calls from other SV methods such as BreakDancer to further increase sensitivity and specificity. BreakDancer result or calls from any methods must in the format: 'ChrA LocA stringA ChrB LocB stringB other'",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.assume_sorted",
-            "class": "boolean",
-            "default": true,
-            "label": "Assume Sorted",
-            "help": "If assume_sorted is set to false AND bam index files are not given as input, app will run samtools sort on input (computationally expensive)",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.insert_size",
-            "class": "int",
-            "label": "Expected Average Insert Size",
-            "help": "If no bam config file is provided as input to the app, app MUST be given an insert size (the length of sequence between the paired-end adapters in paired-end sequence) and app will automatically create a bam configuration file for pindel to use. If this bam was not produced by BWA, this option will be ignored.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "default": 250
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.chromosome",
-            "class": "string",
-            "label": "Chromosome To Process",
-            "help": "Which chr/fragment. Chromosome name must be the same as in reference sequence and in read file. Default (ALL) will loop over all chromosomes. The search for indels and SVs can also be limited to a specific region;\n 20:10,000,000 will only look for indels and SVs after position 10,000,000 == [10M, end] \n-c 20:5,000,000-15,000,000 will report indels in the range between and including the bases at position 5,000,000 and 15,000,000 = [5M, 15M]",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.bam_not_produced_by_bwa",
-            "class": "boolean",
-            "default": false,
-            "label": "BAM Not Produced by BWA",
-            "help": "If set as true, sequence_platform MUST ALSO be set as input. Only set as true if a) BAM file was generated by either Illumina-PairEnd or Illumina-MatePair AND IF another aligner than BWA was used to generate bam file. The reads will be converted to pindel input format using sam2pindel.cpp. Sam2pindel expects a mapping location of mate read if the query is unmapped while the mate has been mapped. Users may need to fix the information about mate reads for some mappers such as bowtie.",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.sequence_platform",
-            "class": "string",
-            "label": "Sequence Platform",
-            "help": "If bam_not_produced_by_bwa is set to true, this input MUST be provided. Pindel's built in sam2pindel conversion takes as input sequence_platform information and supports only Illumina-MatePair or Illumina-PairEnd produced BAM files",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "choices": [
-                "Illumina-MatePair",
-                "Illumina-PairEnd"
-            ]
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.output_prefix",
-            "class": "string",
-            "label": "Output Prefix",
-            "help": "Output Prefix. Default will be the name of the input file",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.num_instances",
-            "class": "int",
-            "label": "Number of Instances",
-            "help": "The number of subjobs Pindel can be split into. More threads assures lower runtime, but will spawn new instances. NOTE: If report_interchrom_events is True (default behavior) or only one chromosome or region is specified in 'chromosome' input, Pindel will only run on one instance regardless of input.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.num_threads_per_instance",
-            "class": "int",
-            "label": "Number of Threads",
-            "help": "The number threads per instance that Pindel will run. More threads assures lower runtime but will not guarantee same results.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.export_vcf",
-            "class": "boolean",
-            "default": true,
-            "label": "Export as VCF",
-            "help": "If true, Pindel will ALSO export short insertion, deletion, inversion, and tandem duplication variants as a single VCF file. Long insertion and break point files will be returned as Pindel files (not currently supported by pindel's VCF converter). NOTE: Export GATK Compatible VCF option must also be true if you wish to use VCF files with GATK tools.",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.vcf_gatk_compatible",
-            "class": "boolean",
-            "default": true,
-            "label": "Export GATK Compatible VCF",
-            "help": "If TRUE, VCF will also be outputted and the -G (GATK) compatibility option will be used in the pindel2vcf converter and it's possible that this format is not compatible with other VCF-reading software. Also note that GATK requires genotypes to be 0/0, 0/1 or 1/1 instead of undefined, like ./1 or . ('not detected'). However, since pindel cannot yet genotype events (distinguish between 0/1 and 1/1) all events are called as 0/0 (not found) or 0/1, even while some may very well be homozygous alternative (1/1). \nIf FALSE, the -G (GATK) compatibility option will not be used; while this allows Pindel to indicate the uncertainty in genotypes, and should be compatible with most software, this format will not be compatible with GATK pipelines and tools such as GATK ValidateVariants.",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_inversions",
-            "class": "boolean",
-            "default": true,
-            "label": "Report Inversions",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_duplications",
-            "class": "boolean",
-            "default": true,
-            "label": "Report Tandem Duplications",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_long_insertions",
-            "class": "boolean",
-            "default": true,
-            "label": "Report Long Insertions",
-            "help": "Report insertions of which the full sequence cannot be deduced because of their length",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_read_pair",
-            "class": "boolean",
-            "default": true,
-            "label": "Report Discordant Read Pair",
-            "help": "Search for discordant read-pair to improve sensitivity.",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_breakpoints",
-            "class": "boolean",
-            "default": true,
-            "label": "Report Breakpoints",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_close_mapped_reads",
-            "class": "boolean",
-            "default": false,
-            "label": "Report Close Mapped Reads",
-            "help": "Report reads of which only one end (the one closest to the mapped read of the paired-end read) could be mapped",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.report_only_close_mapped_reads",
-            "class": "boolean",
-            "default": false,
-            "label": "Return ONLY Close Mapped Reads",
-            "help": "If true, Pindel will not search for SVs and only report reads of which only one end (the one closest to the mapped read of the paired-end read) could be mapped (the output file can then be used as an input file for another run of pindel, which may save size if you need to transfer files). Other files will be outputted as empty files.",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.pindel_command_line",
-            "class": "string",
-            "label": "Pindel Advanced Command Line Options",
-            "help": "If specified, pindel will run with the inputed options. App WILL input 'pindel -f <> -p <> -T <> -o <> [and/or -i <>] -r -t -l -k -s -S -I' according to app inputs. Users must input all OTHER command line options i.e. '-c <> -R <> -x <>'. Do not enter inputs already supplied by app.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: Pindel Advanced Settings"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.export_vcf_advanced_options",
-            "class": "string",
-            "label": "pindel2vcf Command Line Arguments",
-            "help": "If provided, app will run pindel2vcf script with the command line arguments provided as input and export output as VCF file. If not provided, default options and reference genome file name will be used. Please see app page for more details on input parameters. (ex: \"[-P -r -v -G inputs provided by app] -R <required name_and_version_of_reference_genome> -d <required date_of_reference_genome_version>  [-v -c -w -mc -he ... optional parameters]\")",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ: App Settings",
-            "default": "-R hg38 -d 25009 --min_size 1 --min_coverage 10 --min_supporting_reads 5"
-        },
-        {
-            "name": "stage-G0Y8730433Gb8g1g71jQJBZQ.in",
-            "class": "array:file",
-            "label": "Input files",
-            "help": "(Optional) Files to download to instance temporary folder before command is executed.",
-            "optional": true,
-            "group": "stage-G0Y8730433Gb8g1g71jQJBZQ",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G0KbXP0433GXJyYVFfQvqKQQ",
-                        "outputField": "vcf"
-                    }
-                },
-                {
-                    "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
-                },
-                {
-                    "$dnanexus_link": "file-G0kpq7Q433Gj2XQ89FXYpBzq"
-                }
-            ]
-        },
-        {
-            "name": "stage-G0Y8730433Gb8g1g71jQJBZQ.cmd",
-            "class": "string",
-            "label": "Command line",
-            "help": "Command to execute on instance. View the app readme for details.",
-            "group": "stage-G0Y8730433Gb8g1g71jQJBZQ",
-            "default": "sh pindel_filtering_v*.sh"
-        },
-        {
-            "name": "stage-G0Y8730433Gb8g1g71jQJBZQ.image",
-            "class": "string",
-            "label": "Optional Docker image identifier",
-            "help": "(Optional) Instead of using the default Ubuntu 20.04 environment, the input command will be run using the specified Docker image as it would be when running 'docker run image cmd'. Example image identifiers are 'ubuntu:18.04', 'quay.io/ucsc_cgl/samtools'.",
-            "optional": true,
-            "group": "stage-G0Y8730433Gb8g1g71jQJBZQ"
-        },
-        {
-            "name": "stage-G0Y8730433Gb8g1g71jQJBZQ.mount_inputs",
-            "class": "boolean",
-            "default": false,
-            "label": "Whether to use \"dx-mount-all-inputs\"?",
-            "help": "(Optional) Whether to mount all files that were supplied as inputs to the app instead of downloading them to the local storage of the execution worker.",
-            "optional": true,
-            "group": "stage-G0Y8730433Gb8g1g71jQJBZQ"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.docker_image",
-            "class": "file",
-            "label": "static cgppindel docker image",
-            "help": "cgppindel image tar",
-            "optional": false,
-            "patterns": [
-                "*tar.gz"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fz0KxFj4KB7fxxZ06vy2B2P3"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.reference",
-            "class": "file",
-            "label": "reference genome",
-            "help": "Reference genome file *.fa[.gz]",
-            "optional": false,
-            "patterns": [
-                "*fa",
-                "*fa.gz"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.simrep",
-            "class": "file",
-            "label": "simple repeats",
-            "help": "Tabix indexed simple/satellite repeats.",
-            "optional": false,
-            "patterns": [
-                "*bed.gz",
-                "*bed"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fz0Q2GQ41zgB8BK7143y65Q1"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.reference_index",
-            "class": "file",
-            "label": "reference genome index",
-            "help": "Reference genome index file",
-            "optional": false,
-            "patterns": [
-                "*fai"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.simrep_index",
-            "class": "file",
-            "label": "simple repeats index",
-            "help": "Tabix indexed simple/satellite repeats index file.",
-            "optional": false,
-            "patterns": [
-                "*bed.gz.tbi",
-                "*bed.tbi"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fz0Q2Kj41zg0Fgk4G70P9P1X"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.genes",
-            "class": "file",
-            "label": "gene bed file",
-            "help": "Tabix indexed coding gene footprints.",
-            "optional": false,
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.unmatched",
-            "class": "file",
-            "label": "Panel of normals",
-            "help": "Tabix indexed gff3 of unmatched normal panel",
-            "optional": false,
-            "patterns": [
-                "*gff3.gz",
-                "gff3.gz.tbi"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fz8Q0vj41zg6j03fP1vbvfFp"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.assembly",
-            "class": "string",
-            "default": "GRCh38",
-            "label": "genome assembly version",
-            "help": "Name of assembly in use - when not available in BAM header SQ line.",
-            "optional": false,
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.seqtype",
-            "class": "string",
-            "default": "TG",
-            "label": "Sequencing type",
-            "help": "Sequencing protocol, options TG: targeted capture, WXS: whole exome, WGS : whole genome",
-            "optional": false,
-            "choices": [
-                "TG",
-                "WXS",
-                "WGS"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.filter",
-            "class": "file",
-            "label": "Output filter rules",
-            "help": "VCF filter rules file",
-            "optional": false,
-            "patterns": [
-                "*.lst"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fz8xvQj41zgGg10ZJzx8Qz53"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.tumour",
-            "class": "file",
-            "label": "Tumour input bam",
-            "help": "Tumour BAM file ",
-            "optional": false,
-            "patterns": [
-                "*bam"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.tumour_index",
-            "class": "file",
-            "label": "Tumour input bam index",
-            "help": "Tumour BAM file index",
-            "optional": false,
-            "patterns": [
-                "*bai"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam_bai"
-                }
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.normal",
-            "class": "file",
-            "label": "Normal input bam",
-            "help": "Normal BAM",
-            "optional": false,
-            "patterns": [
-                "*bam"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fy9BXxQ40vjGfxP46Jb78Xf1"
-            }
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.normal_index",
-            "class": "file",
-            "label": "Normal input bam index",
-            "help": "Normal BAM index",
-            "optional": false,
-            "patterns": [
-                "*bai"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-            "default": {
-                "$dnanexus_link": "file-Fy9BXxQ40vj7qPJq1Kppjx0F"
-            }
-        },
-        {
-            "name": "stage-G0Y87ZQ433Gy6y7vBB74p30j.in",
-            "class": "array:file",
-            "label": "Input files",
-            "help": "(Optional) Files to download to instance temporary folder before command is executed.",
-            "optional": true,
-            "group": "stage-G0Y87ZQ433Gy6y7vBB74p30j",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-                        "outputField": "output_vcf"
-                    }
-                },
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-                        "outputField": "vcf_index"
-                    }
-                },
-                {
-                    "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
-                },
-                {
-                    "$dnanexus_link": "file-G0Y97F0433GqF68j5fvz9fb6"
-                }
-            ]
-        },
-        {
-            "name": "stage-G0Y87ZQ433Gy6y7vBB74p30j.cmd",
-            "class": "string",
-            "label": "Command line",
-            "help": "Command to execute on instance. View the app readme for details.",
-            "group": "stage-G0Y87ZQ433Gy6y7vBB74p30j",
-            "default": "sh cgppindel_filtering_v*.sh"
-        },
-        {
-            "name": "stage-G0Y87ZQ433Gy6y7vBB74p30j.image",
-            "class": "string",
-            "label": "Optional Docker image identifier",
-            "help": "(Optional) Instead of using the default Ubuntu 20.04 environment, the input command will be run using the specified Docker image as it would be when running 'docker run image cmd'. Example image identifiers are 'ubuntu:18.04', 'quay.io/ucsc_cgl/samtools'.",
-            "optional": true,
-            "group": "stage-G0Y87ZQ433Gy6y7vBB74p30j"
-        },
-        {
-            "name": "stage-G0Y87ZQ433Gy6y7vBB74p30j.mount_inputs",
-            "class": "boolean",
-            "default": false,
-            "label": "Whether to use \"dx-mount-all-inputs\"?",
-            "help": "(Optional) Whether to mount all files that were supplied as inputs to the app instead of downloading them to the local storage of the execution worker.",
-            "optional": true,
-            "group": "stage-G0Y87ZQ433Gy6y7vBB74p30j"
-        },
-        {
-            "name": "stage-G0KbB6Q433GyV6vbJZKVYV96.input_bam",
-            "class": "file",
-            "label": "Input BAM file",
-            "help": "The ID of an 'unrefined' BAM file for contamination checking",
-            "optional": false,
-            "patterns": [
-                "*.bam"
-            ],
-            "group": "stage-G0KbB6Q433GyV6vbJZKVYV96",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-G0KbB6Q433GyV6vbJZKVYV96.input_bam_index",
-            "class": "file",
-            "label": "Index of input BAM",
-            "help": "The index file corresponding to the input BAM file",
-            "optional": false,
-            "patterns": [
-                "*.bai"
-            ],
-            "group": "stage-G0KbB6Q433GyV6vbJZKVYV96",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam_bai"
-                }
-            }
-        },
-        {
-            "name": "stage-G0KbB6Q433GyV6vbJZKVYV96.vcf_file",
-            "class": "file",
-            "label": "A vcf file containing the SNPs used to calculate contamination",
-            "help": "Select the vcf that corresponds to the correct genome build, GRCh37 or GRCh38",
-            "optional": false,
-            "patterns": [
-                "*.vcf.gz",
-                "*.vcf"
-            ],
-            "group": "stage-G0KbB6Q433GyV6vbJZKVYV96",
-            "default": {
-                "$dnanexus_link": "file-G07zJxj41zgF593x6j7bqZ7X"
-            }
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.sorted_bam",
-            "class": "file",
-            "label": "Sorted Mappings",
-            "help": "An input BAM file for deduplicating and/or Picard Tools QC suites",
-            "optional": false,
-            "patterns": [
-                "*.bam"
-            ],
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.fasta_index",
-            "class": "file",
-            "label": "Reference FASTA index archive",
-            "help": "A gzipped tarball containing the reference genome files genome.fa, genome.fa.fai and genome.dict.",
-            "optional": false,
-            "suggestions": [
-                {
-                    "project": "project-F3zqGV04fXX5j7566869fjFq",
-                    "path": "/",
-                    "name": "DNAnexus Apps Data (AWS Germany)"
-                }
-            ],
-            "patterns": [
-                "*.fasta-index.tar.gz"
-            ],
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK",
-            "default": {
-                "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
-            }
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.bedfile",
-            "class": "file",
-            "label": "Bedfile used to calculate HS metrics",
-            "help": "Choose manufacturer's bed file (for the enrichment kit) whose coordinates will be used to calculate the selection metrics.",
-            "optional": true,
-            "patterns": [
-                "*.bed"
-            ],
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK",
-            "default": {
-                "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
-            }
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.run_CollectMultipleMetrics",
-            "class": "boolean",
-            "default": true,
-            "label": "Choose whether to run Picard CollectMultipleMetrics",
-            "help": "Specifically, run CollectAlignmentSummaryMetrics, CollectInsertSizeMetrics, QualityScoreDistribution, MeanQualityByCycle, CollectBaseDistributionByCycle, CollectGcBiasMetrics, CollectQualityYieldMetrics. See https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectMultipleMetrics-Picard-",
-            "optional": false,
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK: Picard functions"
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.run_CollectHsMetrics",
-            "class": "boolean",
-            "default": true,
-            "label": "Choose whether to run Picard CollectHsMetrics",
-            "help": "Collects hybrid-selection (HS) metrics for a SAM or BAM file. https://gatk.broadinstitute.org/hc/en-us/articles/360037591891-CollectHsMetrics-Picard-",
-            "optional": false,
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK: Picard functions"
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.run_CollectTargetedPcrMetrics",
-            "class": "boolean",
-            "default": true,
-            "label": "Choose whether to run Picard CollectTargetedPcrMetrics",
-            "help": "Calculate PCR-related metrics from targeted sequencing data. https://gatk.broadinstitute.org/hc/en-us/articles/360037225812-CollectTargetedPcrMetrics-Picard-",
-            "optional": false,
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK: Picard functions"
-        },
-        {
-            "name": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG.input_bam",
-            "class": "file",
-            "label": "input bam",
-            "help": "",
-            "optional": false,
-            "patterns": [
-                "*.bam"
-            ],
-            "group": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG.input_bam_index",
-            "class": "file",
-            "label": "input_bam_index",
-            "help": "",
-            "optional": false,
-            "patterns": [
-                "*.bam.bai"
-            ],
-            "group": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam_bai"
-                }
-            }
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.optional_arguments",
-            "class": "string",
-            "label": "optional args",
-            "help": "",
-            "optional": true,
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.quantize_labels",
-            "class": "string",
-            "label": "optional quantize labels",
-            "help": "List of comma seperated labels for bins if using --quantize, number of labels must match number of bins. If none are given the defaults from the readme are passed.",
-            "optional": true,
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.bam",
-            "class": "file",
-            "label": "BAM file",
-            "help": "BAM file to generate bp coverage on",
-            "optional": false,
-            "patterns": [
-                "*.bam$"
-            ],
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam"
-                }
-            }
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.index",
-            "class": "file",
-            "label": "Index file",
-            "help": "Index of BAM",
-            "optional": false,
-            "patterns": [
-                "*.bai$"
-            ],
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-            "default": {
-                "$dnanexus_link": {
-                    "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-                    "outputField": "mappings_bam_bai"
-                }
-            }
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.bed",
-            "class": "file",
-            "label": "bed file",
-            "help": "BED file to generate regions.bed",
-            "optional": true,
-            "patterns": [
-                ".bed$"
-            ],
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-            "default": {
-                "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-            }
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.qual_flags",
-            "class": "boolean",
-            "default": true,
-            "label": "Quality flags",
-            "help": "Optional remove duplicate and multi mapped reads using --flag 1796 --mapq 20. Default: True",
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.panel_bed",
-            "class": "file",
-            "label": "BED file of panel",
-            "help": "",
-            "optional": false,
-            "patterns": [
-                "*.bed"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp",
-            "default": {
-                "$dnanexus_link": "file-FybxKB041zg3PgQ467BfFYKq"
-            }
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.exons_nirvana",
-            "class": "file",
-            "label": "Exons nirvana file (from 001_References)",
-            "help": "",
-            "optional": false,
-            "suggestions": [
-                {
-                    "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-                    "path": "/annotation/b37/"
-                }
-            ],
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp",
-            "default": {
-                "$dnanexus_link": "file-FybxJ4Q41zgP75z7B2F1jbgg"
-            }
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.mosdepth_files",
-            "class": "array:file",
-            "label": "Array of files output from mosdepth.",
-            "help": "Array of eggd_mosdepth output files, uses per base bed and reference build txt file.",
-            "optional": false,
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp",
-            "default": [
-                {
-                    "$dnanexus_link": {
-                        "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
-                        "outputField": "mosdepth_output"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.thresholds",
-            "class": "string",
-            "default": "100, 250, 500, 1000, 1500",
-            "label": "String of comma seperated thresholds at which to calculate coverage",
-            "help": "",
-            "optional": true,
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.cutoff_threshold",
-            "class": "int",
-            "default": 250,
-            "label": "Threshold to define sub-optimal coverage",
-            "help": "",
-            "optional": true,
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.name",
-            "class": "string",
-            "label": "Sample name, used in report and for naming output files",
-            "help": "",
-            "optional": true,
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.limit",
-            "class": "int",
-            "default": -1,
-            "label": "Number of genes at which to skip full gene plot generation, for large panels this may take a long time.",
-            "help": "",
-            "optional": true,
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.panel",
-            "class": "boolean",
-            "default": true,
-            "label": "Display panel",
-            "help": "Display panel(s) / gene(s) from name of panel bed file. Default: True",
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.snps",
-            "class": "array:file",
-            "label": "SNP VCFs to check coverage for",
-            "help": "",
-            "optional": true,
-            "patterns": [
-                "*.vcf*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp",
-            "default": [
-                {
-                    "$dnanexus_link": "file-FyZfyqQ41zg5FjK2GykYfKq8"
-                }
-            ]
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.summary",
-            "class": "boolean",
-            "default": true,
-            "label": "Report summary",
-            "help": "Display summary of genes / transcripts in report in summary section. Default: False",
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
+          },
+          {
+            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
+          },
+          {
+            "$dnanexus_link": "file-G0Y97F0433GqF68j5fvz9fb6"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-G0KbB6Q433GyV6vbJZKVYV96",
+      "executable": "applet-G0Kb58Q433GVv31xKZXF169k",
+      "folder": "verifybamid_v2.1.0",
+      "input": {
+        "vcf_file": {
+          "$dnanexus_link": "file-G07zJxj41zgF593x6j7bqZ7X"
+        },
+        "input_bam": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
+        },
+        "input_bam_index": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam_bai"
+          }
         }
-    ],
-    "outputSpec": [
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.report_htmls",
-            "class": "array:file",
-            "label": "html fastqc reports (1 per input fastq)",
-            "help": "",
-            "patterns": [
-                "*.html"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
+      }
+    },
+    {
+      "id": "stage-Fy0549Q41zg02Kjg05x69yvK",
+      "executable": "applet-Fp69k884qBzVfbvP812F92gG",
+      "folder": "eggd_picardqc_v1.0.0",
+      "input": {
+        "run_CollectTargetedPcrMetrics": true,
+        "fasta_index": {
+          "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
         },
-        {
-            "name": "stage-G0q44PQ433GYV97qKk0zkb4J.stats_txts",
-            "class": "array:file",
-            "label": "txt fastqc stats (1 per input fastq)",
-            "help": "",
-            "patterns": [
-                "*.html"
-            ],
-            "group": "stage-G0q44PQ433GYV97qKk0zkb4J"
+        "bedfile": {
+          "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
         },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.mappings_bam",
-            "class": "file",
-            "label": "Sorted mappings with duplicate marked/removed",
-            "help": "A coordinate-sorted BAM file with the resulting mappings.",
-            "patterns": [
-                "*.bam",
-                "*.cram"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.mappings_bam_bai",
-            "class": "file",
-            "label": "Sorted mappings with duplicate marked/removed index",
-            "help": "The associated BAM index file.",
-            "patterns": [
-                "*.bai",
-                "*.crai"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.metrics",
-            "class": "array:file",
-            "label": "Reads stats metrics",
-            "help": "An array of files containing statistical summaries of the data quality.",
-            "optional": true,
-            "patterns": [
-                "*metrics.txt",
-                "*metrics.pdf"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpXy0433Gv75XbPJ3xj8jV.md5sums",
-            "class": "array:file",
-            "label": "MD5 sum files for most outputs",
-            "help": "An array of files containing the md5sum files for BAM, CRAM and VCF outputs.",
-            "optional": true,
-            "patterns": [
-                "*.md5"
-            ],
-            "group": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.variants_vcf",
-            "class": "file",
-            "label": "Variants",
-            "help": "The genotyped variants in VCF format.",
-            "patterns": [
-                "*.vcf.gz"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.variants_vcftbi",
-            "class": "file",
-            "label": "Variants index",
-            "help": "The associated TBI file.",
-            "patterns": [
-                "*.vcf.gz.tbi"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0qpY1Q433GpzBp958KJYfBK.md5sums",
-            "class": "array:file",
-            "label": "MD5 sum files for most outputs",
-            "help": "An array of files containing the md5sum files for BAM, CRAM and VCF outputs.",
-            "optional": true,
-            "patterns": [
-                "*.md5"
-            ],
-            "group": "stage-G0qpY1Q433GpzBp958KJYfBK"
-        },
-        {
-            "name": "stage-G0gx0zQ433GkVKk6KBQjJ2f3.out",
-            "class": "array:file",
-            "label": "Output files",
-            "help": "(Optional) New files that were created in temporary folder.",
-            "optional": true,
-            "group": "stage-G0gx0zQ433GkVKk6KBQjJ2f3"
-        },
-        {
-            "name": "stage-G18JF28433GkzzVJ3Gk4199k.out",
-            "class": "array:file",
-            "label": "Output files",
-            "help": "(Optional) New files that were created in temporary folder.",
-            "optional": true,
-            "group": "stage-G18JF28433GkzzVJ3Gk4199k"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.deletions",
-            "class": "file",
-            "label": "Pindel Detected Deletions",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.short_inserts",
-            "class": "file",
-            "label": "Pindel Detected Short Insertions",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.inversions",
-            "class": "file",
-            "label": "Pindel Detected Inversions",
-            "help": "Output will be empty IF report_inversions (app input) is set to false",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.tandem_duplications",
-            "class": "file",
-            "label": "Pindel Detected Tandem Duplications",
-            "help": "Output will be empty IF report_duplications (app input) is set to false",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.large_inserts",
-            "class": "file",
-            "label": "Pindel Detected Large Insertions",
-            "help": "Output will be empty IF report_long_insertions (app input) is set to false",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.breakpoints",
-            "class": "file",
-            "label": "Pindel Detected Unassigned Breakpoints",
-            "help": "Output will be empty IF report_breakpoints (app input) is set to false",
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.close_mapped_reads",
-            "class": "file",
-            "label": "Pindel Detected Close Mapped Reads",
-            "help": "Output will be empty UNLESS report_close_mapped_reads or report_only_close_mapped_reads (app input) is set to true",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.vcf",
-            "class": "file",
-            "label": "Pindel Variants (VCF)",
-            "help": "If true, VCF will be outputed in addition to pindel outputs. Currently pindel2vcf converter does not support large inserts and breakpoint file conversions.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0KbXP0433GXJyYVFfQvqKQQ.sortedbam_and_index_files",
-            "class": "array:file",
-            "label": "Sorted BAM Index Files",
-            "help": "If app sorts and indexes BAM files, will upload BAM Index(es) [and sorted BAM(s) if assume_sorted=False] to platform for use in future analyses.",
-            "optional": true,
-            "group": "stage-G0KbXP0433GXJyYVFfQvqKQQ"
-        },
-        {
-            "name": "stage-G0Y8730433Gb8g1g71jQJBZQ.out",
-            "class": "array:file",
-            "label": "Output files",
-            "help": "(Optional) New files that were created in temporary folder.",
-            "optional": true,
-            "group": "stage-G0Y8730433Gb8g1g71jQJBZQ"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.cgppindel_output",
-            "class": "array:file",
-            "label": "array of cgppindel output files",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.output_vcf",
-            "class": "file",
-            "label": "Variant Call Format",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81"
-        },
-        {
-            "name": "stage-G02ZFz0433GpQB4j9Gvg0b81.vcf_index",
-            "class": "file",
-            "label": "VCF index",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZFz0433GpQB4j9Gvg0b81"
-        },
-        {
-            "name": "stage-G0Y87ZQ433Gy6y7vBB74p30j.out",
-            "class": "array:file",
-            "label": "Output files",
-            "help": "(Optional) New files that were created in temporary folder.",
-            "optional": true,
-            "group": "stage-G0Y87ZQ433Gy6y7vBB74p30j"
-        },
-        {
-            "name": "stage-G0KbB6Q433GyV6vbJZKVYV96.verifybamid_out",
-            "class": "array:file",
-            "label": "verifyBamID output files",
-            "help": "verifyBamID contamination statistics, read depth distribution and log file",
-            "group": "stage-G0KbB6Q433GyV6vbJZKVYV96"
-        },
-        {
-            "name": "stage-Fy0549Q41zg02Kjg05x69yvK.eggd_picard_stats",
-            "class": "array:file",
-            "label": "Picard stats files",
-            "help": "The generated statistics files",
-            "group": "stage-Fy0549Q41zg02Kjg05x69yvK"
-        },
-        {
-            "name": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG.flagstat_output",
-            "class": "file",
-            "label": "flagstat_output",
-            "help": "",
-            "patterns": [
-                "*.flagstat"
-            ],
-            "group": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG"
-        },
-        {
-            "name": "stage-Fy4j4K041zgF5Z8y0x9KjV55.mosdepth_output",
-            "class": "array:file",
-            "label": "array of mosdepth output files",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.exon_stats",
-            "class": "file",
-            "label": "Exon statistics file",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.gene_stats",
-            "class": "file",
-            "label": "Gene statistics file",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.report",
-            "class": "file",
-            "label": "HTML coverage report",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
-        },
-        {
-            "name": "stage-G02ZG6Q433GV76v29b6Gggjp.annotated_bed",
-            "class": "file",
-            "label": "Annotated BED file",
-            "help": "",
-            "patterns": [
-                "*"
-            ],
-            "group": "stage-G02ZG6Q433GV76v29b6Gggjp"
+        "sorted_bam": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
         }
-    ]
+      }
+    },
+    {
+      "id": "stage-Fv6jY9Q4KB7yKfKx8Fq8b7zG",
+      "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
+      "folder": "samtools_flagstat_v1.0.0",
+      "input": {
+        "input_bam": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
+        },
+        "input_bam_index": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam_bai"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
+      "executable": "applet-Fxq07gQ433Gyz14j5ZZ1fzk1",
+      "folder": "eggd_mosdepth_v1.0.1",
+      "input": {
+        "bed": {
+          "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
+        },
+        "bam": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam"
+          }
+        },
+        "index": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
+            "outputField": "mappings_bam_bai"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-G02ZG6Q433GV76v29b6Gggjp",
+      "executable": "applet-FykqQzj433GbQXFqJY70jFvJ",
+      "folder": "athena_v1.0.3",
+      "input": {
+        "thresholds": "100, 250, 500, 1000, 1500",
+        "cutoff_threshold": 250,
+        "summary": true,
+        "panel_bed": {
+          "$dnanexus_link": "file-FybxKB041zg3PgQ467BfFYKq"
+        },
+        "exons_nirvana": {
+          "$dnanexus_link": "file-FybxJ4Q41zgP75z7B2F1jbgg"
+        },
+        "snps": [
+          {
+            "$dnanexus_link": "file-FyZfyqQ41zg5FjK2GykYfKq8"
+          }
+        ],
+        "mosdepth_files": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
+              "outputField": "mosdepth_output"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
