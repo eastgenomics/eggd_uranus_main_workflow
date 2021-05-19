@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.3.0",
-  "title": "uranus_main_workflow_GRCh38_v1.3.0",
+  "name": "uranus_main_workflow_GRCh38_v1.4.0",
+  "title": "uranus_main_workflow_GRCh38_v1.4.0",
   "stages": [
     {
       "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
@@ -49,23 +49,14 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/1.4.12",
-      "folder": "eggd_vcf_handler_for_uranus_v1.4.12",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.1.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.1.0",
       "input": {
-        "mutect2_fai": {
-          "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-        },
-        "bed": {
-          "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-        },
         "vcf": {
           "$dnanexus_link": {
             "outputField": "variants_vcf",
             "stage": "stage-G0qpY1Q433GpzBp958KJYfBK"
           }
-        },
-        "mutect2_fasta": {
-          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         }
       }
     },
