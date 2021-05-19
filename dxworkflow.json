@@ -52,23 +52,11 @@
       "executable": "app-eggd_vcf_handler_for_uranus/2.1.0",
       "folder": "eggd_vcf_handler_for_uranus_v2.1.0",
       "input": {
-        "vep_tarball": {
-          "$dnanexus_link": "file-G2K4XZQ433GXjVfF58jJ0F05"
-        },
         "vcf": {
           "$dnanexus_link": {
             "outputField": "variants_vcf",
             "stage": "stage-G0qpY1Q433GpzBp958KJYfBK"
           }
-        },
-        "mutect2_fai": {
-          "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
-        },
-        "bed": {
-          "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-        },
-        "mutect2_fasta": {
-          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         }
       }
     },
