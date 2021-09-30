@@ -3,8 +3,8 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 
 -------
 
-## Current Version: 1.4.0
-![Image of workflow](uranus_main_workflow_v1.4.0.png)
+## Current Version: 1.5.0_hiseq_
+![Image of workflow](uranus_main_workflow_v1.5.0.png)
 
 ## What apps are used in this workflow?
 
