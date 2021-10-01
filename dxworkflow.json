@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.4.0",
-  "title": "uranus_main_workflow_GRCh38_v1.4.0",
+  "name": "uranus_main_workflow_GRCh38_v1.5.0_hiseq",
+  "title": "uranus_main_workflow_GRCh38_v1.5.0_hiseq",
   "stages": [
     {
       "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
@@ -66,7 +66,10 @@
       "folder": "cgppindel_v1.0.0",
       "input": {
         "reference_index": {
-          "$dnanexus_link": "file-G00jqQj4J7Byv963KkZ40kXv"
+          "$dnanexus_link": {
+            "project": "project-G21BGP84q5JFYf168QjZ58Vz",
+            "id": "file-G00jqQj4J7Byv963KkZ40kXv"
+          }
         },
         "tumour": {
           "$dnanexus_link": {
@@ -242,7 +245,7 @@
         ],
         "cutoff_threshold": 250,
         "panel_bed": {
-          "$dnanexus_link": "file-G23Jqbj4q5J0jkVb0Xj97Vgy"
+          "$dnanexus_link": "file-G41B3f8433GqkYGV81F75gvp"
         }
       }
     }
