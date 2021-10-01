@@ -1,12 +1,7 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.5.0_hiseq",
-  "title": "uranus_main_workflow_GRCh38_v1.5.0_hiseq",
+  "name": "uranus_main_workflow_GRCh38_v1.6.0",
+  "title": "uranus_main_workflow_GRCh38_v1.6.0",
   "stages": [
-    {
-      "id": "stage-G0q44PQ433GYV97qKk0zkb4J",
-      "executable": "applet-FvyXygj433GbKPPY0QY8ZKQG",
-      "folder": "multi_fastqc_v1.1.0"
-    },
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
       "executable": "app-sentieon-bwa/2.1.0",
@@ -28,11 +23,6 @@
         "genome_fastagz": {
           "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
         },
-        "somatic_algo": "TNhaplotyper2",
-        "run_bqsr": true,
-        "panel_of_normal_vcfgz": {
-          "$dnanexus_link": "file-FxGJf3j41zg0zGX849JGpJ1v"
-        },
         "gatk_resource_bundle": {
           "$dnanexus_link": {
             "project": "project-F3zqGV04fXX5j7566869fjFq",
@@ -44,7 +34,9 @@
             "outputField": "mappings_bam",
             "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
           }
-        }
+        },
+        "run_bqsr": true,
+        "somatic_algo": "TNhaplotyper2"
       }
     },
     {
@@ -52,6 +44,9 @@
       "executable": "app-eggd_vcf_handler_for_uranus/2.1.0",
       "folder": "eggd_vcf_handler_for_uranus_v2.1.0",
       "input": {
+        "bed": {
+          "$dnanexus_link": "file-G41x2xQ433GYX43Z81vpG6P4"
+        },
         "vcf": {
           "$dnanexus_link": {
             "outputField": "variants_vcf",
