@@ -1,7 +1,7 @@
 # eggd_uranus_workflow (DNAnexus Platform Workflow)
 DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 
-This workflow is a modified version of v1.5.0 (hiseq) that is compatible with data produced by the Novaseq Instrument
+This workflow is a modified version of v1.6.0 (Novaseq) that is compatible with data produced by the Novaseq Instrument
 
 -------
 
