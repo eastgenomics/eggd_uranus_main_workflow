@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.6.0",
-  "title": "uranus_main_workflow_GRCh38_v1.6.0",
+  "name": "uranus_main_workflow_GRCh38_v1.7.0",
+  "title": "uranus_main_workflow_GRCh38_v1.7.0",
   "stages": [
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
@@ -217,8 +217,8 @@
     },
     {
       "id": "stage-G02ZG6Q433GV76v29b6Gggjp",
-      "executable": "applet-G1Jb6v0433Gv5qj33B30bqjp",
-      "folder": "athena_v1.1.2",
+      "executable": "applet-G48VfX8433GypYP8418pPfq7",
+      "folder": "eggd_athena_v1.2.2",
       "input": {
         "snps": [
           {

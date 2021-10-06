@@ -22,4 +22,4 @@ This workflow is a modified version of v1.6.0 (Novaseq) that is compatible with 
 |picardqc           |1.0.0|
 |samtools_flagstat  |1.0.0|
 |mosdepth           |1.0.1|
-|athena             |1.1.2|
+|athena             |1.2.2|
