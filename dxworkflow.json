@@ -41,8 +41,8 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.2.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.2.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.3.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.3.0",
       "input": {
         "mutect2_bed": {
           "$dnanexus_link": "file-G41x2xQ433GYX43Z81vpG6P4"
@@ -67,7 +67,45 @@
             "outputField": "vcf_index",
             "stage": "stage-G02ZFz0433GpQB4j9Gvg0b81"
           }
-        }
+        },
+        "maf_file": {
+          "$dnanexus_link": "file-G5PXK90433GjKFq70yfz9qfZ"
+        },
+        "maf_file_tbi": {
+          "$dnanexus_link": "file-G5PXKFj433Gv495095Z95pk1"
+        },
+        "vep_annotation": [
+          {
+            "$dnanexus_link": "file-G61xXjj433GzPf7Q45Z7pf2z"
+          },
+          {
+            "$dnanexus_link": "file-G61xXyj433Gz7Bx5P8j7zbGy"
+          },
+          {
+            "$dnanexus_link": "file-G61xbP0433GqX36p8QQxP3PV"
+          },
+          {
+            "$dnanexus_link": "file-G61xf3j433Gz49jf6XjKG4F0"
+          },
+          {
+            "$dnanexus_link": "file-G61xfZ0433Gj2vJ7P8k9ky2Z"
+          },
+          {
+            "$dnanexus_link": "file-G61y4Y8433GvyjJ52Fj5XjY5"
+          },
+          {
+            "$dnanexus_link": "file-G64Jfk0433GVp0JJPZ4Q8FzJ"
+          },
+          {
+            "$dnanexus_link": "file-G64K4bj433GZ35xJJ7YXGvzv"
+          },
+          {
+            "$dnanexus_link": "file-G64K0VQ433GV03462J6GXb9Z"
+          },
+          {
+            "$dnanexus_link": "file-G64K4j8433Gb0PgpFgbzjj1b"
+          }
+        ]
       }
     },
     {
