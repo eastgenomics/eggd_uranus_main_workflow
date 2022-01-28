@@ -155,7 +155,6 @@
             "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
           }
         },
-        "run_CollectTargetedPcrMetrics": true,
         "bedfile": {
           "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
         },
