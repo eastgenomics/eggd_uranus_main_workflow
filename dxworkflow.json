@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.8.0",
-  "title": "uranus_main_workflow_GRCh38_v1.8.0",
+  "name": "uranus_main_workflow_GRCh38_v1.9.0",
+  "title": "uranus_main_workflow_GRCh38_v1.9.0",
   "stages": [
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
@@ -41,8 +41,8 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.3.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.3.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.5.1",
+      "folder": "eggd_vcf_handler_for_uranus_v2.5.1",
       "input": {
         "mutect2_bed": {
           "$dnanexus_link": "file-G41x2xQ433GYX43Z81vpG6P4"
@@ -72,8 +72,8 @@
     },
     {
       "id": "stage-G02ZFz0433GpQB4j9Gvg0b81",
-      "executable": "applet-G00xzx04J7BZ0684489Gpv8Q",
-      "folder": "cgppindel_v1.0.0",
+      "executable": "applet-G7G43xQ433GjJ1Zk1yZ6Z622",
+      "folder": "cgppindel_v1.0.1",
       "input": {
         "reference_index": {
           "$dnanexus_link": {
@@ -155,7 +155,6 @@
             "stage": "stage-G0qpXy0433Gv75XbPJ3xj8jV"
           }
         },
-        "run_CollectTargetedPcrMetrics": true,
         "bedfile": {
           "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
         },
