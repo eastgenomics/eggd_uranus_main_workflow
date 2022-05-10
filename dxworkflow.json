@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.9.1",
-  "title": "uranus_main_workflow_GRCh38_v1.9.1",
+  "name": "uranus_main_workflow_GRCh38_v1.10.0",
+  "title": "uranus_main_workflow_GRCh38_v1.10.0",
   "stages": [
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
@@ -41,11 +41,11 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.5.2",
-      "folder": "eggd_vcf_handler_for_uranus_v2.5.2",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
       "input": {
         "mutect2_bed": {
-          "$dnanexus_link": "file-G41x2xQ433GYX43Z81vpG6P4"
+          "$dnanexus_link": "file-G9vKbv0433Gg2bP9GP72pxKJ"
         },
         "pindel_bed": {
             "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
@@ -203,8 +203,8 @@
     },
     {
       "id": "stage-G02ZG6Q433GV76v29b6Gggjp",
-      "executable": "applet-G48VfX8433GypYP8418pPfq7",
-      "folder": "eggd_athena_v1.2.2",
+      "executable": "app-eggd_athena/1.4.0",
+      "folder": "eggd_athena_v1.4.0",
       "input": {
         "snps": [
           {
@@ -212,8 +212,8 @@
           }
         ],
         "thresholds": "100, 250, 500, 1000, 1500",
-        "exons_nirvana": {
-          "$dnanexus_link": "file-FybxJ4Q41zgP75z7B2F1jbgg"
+        "exons_file": {
+          "$dnanexus_link": "file-G9vKbv0433GVJQ4BK701FjBB"
         },
         "summary": true,
         "mosdepth_files": [
@@ -226,7 +226,7 @@
         ],
         "cutoff_threshold": 250,
         "panel_bed": {
-          "$dnanexus_link": "file-G41B3f8433GqkYGV81F75gvp"
+          "$dnanexus_link": "file-G9vKbv0433GxkgqK2GJj79fP"
         }
       }
     }
