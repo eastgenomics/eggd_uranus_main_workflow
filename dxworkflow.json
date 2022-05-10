@@ -4,7 +4,7 @@
   "stages": [
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-      "executable": "app-sentieon-bwa/2.1.0",
+      "executable": "app-sentieon-bwa/3.2.0",
       "folder": "sentieon_bam",
       "input": {
         "genome_fastagz": {
@@ -17,7 +17,7 @@
     },
     {
       "id": "stage-G0qpY1Q433GpzBp958KJYfBK",
-      "executable": "app-sentieon-tnbam/2.1.0",
+      "executable": "app-sentieon-tnbam/3.2.0",
       "folder": "sentieon_vcfs",
       "input": {
         "genome_fastagz": {

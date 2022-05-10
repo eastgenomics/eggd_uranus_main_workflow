@@ -15,8 +15,8 @@ This workflow is a modified version of v1.9.1 (Novaseq) that is compatible with 
 |  App 	| Version  	|
 |---	|---	|
 |multi_fastqc       |1.1.0|
-|sentieon_bwa_mem   |2.1.0|
-|sentieon_bam_to_vcf|2.1.0|_
+|sentieon_bwa_mem   |3.2.0|
+|sentieon_bam_to_vcf|3.2.0|_
 |eggd_vcf_handler_for_uranus|2.6.0|
 |cgppindel          |1.0.1|
 |verifybamid        |2.1.0|
