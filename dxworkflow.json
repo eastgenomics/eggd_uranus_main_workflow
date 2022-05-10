@@ -45,10 +45,13 @@
       "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
       "input": {
         "mutect2_bed": {
-          "$dnanexus_link": "file-G9vKbv0433Gg2bP9GP72pxKJ"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433Gg2bP9GP72pxKJ"
+          }
         },
         "pindel_bed": {
-            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
+          "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
         },
         "mutect2_vcf": {
           "$dnanexus_link": {
@@ -213,20 +216,52 @@
         ],
         "thresholds": "100, 250, 500, 1000, 1500",
         "exons_file": {
-          "$dnanexus_link": "file-G9vKbv0433GVJQ4BK701FjBB"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GVJQ4BK701FjBB"
+          }
         },
         "summary": true,
         "mosdepth_files": [
           {
             "$dnanexus_link": {
-              "outputField": "mosdepth_output",
-              "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
+              "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
+              "outputField": "mosdepth_output"
             }
           }
         ],
         "cutoff_threshold": 250,
         "panel_bed": {
-          "$dnanexus_link": "file-G9vKbv0433GxkgqK2GJj79fP"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GxkgqK2GJj79fP"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-G9x7pbj41bQx1XXKGKXJxv7K",
+      "executable": "app-eggd_generate_vcf_metadata/1.0.0",
+      "input": {
+        "vcfs": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
+              "outputField": "variants_vcf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-G9x7x0Q41bQkpZXgBGzqGqX5",
+      "executable": "applet-G5YG118433Gk5xPbGx172fq8",
+      "input": {
+        "sample_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
+            "outputField": "variants_vcf"
+          }
         }
       }
     }
