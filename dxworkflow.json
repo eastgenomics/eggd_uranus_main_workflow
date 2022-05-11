@@ -159,7 +159,10 @@
           }
         },
         "bedfile": {
-          "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GjJv1j7gp0P9vx"
+          }
         },
         "fasta_index": {
           "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
