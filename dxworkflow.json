@@ -236,7 +236,8 @@
             "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
             "id": "file-G9vKbv0433GxkgqK2GJj79fP"
           }
-        }
+        },
+        "per_chromosome_coverage": true
       }
     },
     {
@@ -261,6 +262,21 @@
           "$dnanexus_link": {
             "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
             "outputField": "variants_vcf"
+          }
+        },
+        "reference_genome": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+          }
+        },
+        "reference_genome_index": {
+          "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
+        },
+        "snp_site_vcf": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vXxp8433Gz8jz02fbyKzVj"
           }
         }
       }
