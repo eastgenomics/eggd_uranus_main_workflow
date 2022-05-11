@@ -246,6 +246,7 @@
     {
       "id": "stage-G9x7pbj41bQx1XXKGKXJxv7K",
       "executable": "app-eggd_generate_vcf_metadata/1.0.0",
+      "folder": "generate_vcf_metadata_v1.0.0",
       "input": {
         "vcfs": [
           {
@@ -260,6 +261,7 @@
     {
       "id": "stage-G9x7x0Q41bQkpZXgBGzqGqX5",
       "executable": "applet-G5YG118433Gk5xPbGx172fq8",
+      "folder": "somalier_extract_v1.0.2",
       "input": {
         "sample_vcf": {
           "$dnanexus_link": {
