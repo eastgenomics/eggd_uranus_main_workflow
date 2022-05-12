@@ -1,10 +1,11 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.9.1",
-  "title": "uranus_main_workflow_GRCh38_v1.9.1",
+  "name": "uranus_main_workflow_GRCh38_v1.10.0",
+  "title": "uranus_main_workflow_GRCh38_v1.10.0",
+  "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
       "id": "stage-G0qpXy0433Gv75XbPJ3xj8jV",
-      "executable": "app-sentieon-bwa/2.1.0",
+      "executable": "app-sentieon-bwa/3.2.0",
       "folder": "sentieon_bam",
       "input": {
         "genome_fastagz": {
@@ -17,7 +18,7 @@
     },
     {
       "id": "stage-G0qpY1Q433GpzBp958KJYfBK",
-      "executable": "app-sentieon-tnbam/2.1.0",
+      "executable": "app-sentieon-tnbam/3.2.0",
       "folder": "sentieon_vcfs",
       "input": {
         "genome_fastagz": {
@@ -41,14 +42,17 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.5.2",
-      "folder": "eggd_vcf_handler_for_uranus_v2.5.2",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
       "input": {
         "mutect2_bed": {
-          "$dnanexus_link": "file-G41x2xQ433GYX43Z81vpG6P4"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433Gg2bP9GP72pxKJ"
+          }
         },
         "pindel_bed": {
-            "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
+          "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
         },
         "mutect2_vcf": {
           "$dnanexus_link": {
@@ -156,7 +160,10 @@
           }
         },
         "bedfile": {
-          "$dnanexus_link": "file-Fzp57Jj41zg5KbV72PVVGkkb"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GjJv1j7gp0P9vx"
+          }
         },
         "fasta_index": {
           "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
@@ -203,8 +210,8 @@
     },
     {
       "id": "stage-G02ZG6Q433GV76v29b6Gggjp",
-      "executable": "applet-G48VfX8433GypYP8418pPfq7",
-      "folder": "eggd_athena_v1.2.2",
+      "executable": "app-eggd_athena/1.4.0",
+      "folder": "eggd_athena_v1.4.0",
       "input": {
         "snps": [
           {
@@ -212,21 +219,71 @@
           }
         ],
         "thresholds": "100, 250, 500, 1000, 1500",
-        "exons_nirvana": {
-          "$dnanexus_link": "file-FybxJ4Q41zgP75z7B2F1jbgg"
+        "exons_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GVJQ4BK701FjBB"
+          }
         },
         "summary": true,
         "mosdepth_files": [
           {
             "$dnanexus_link": {
-              "outputField": "mosdepth_output",
-              "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55"
+              "stage": "stage-Fy4j4K041zgF5Z8y0x9KjV55",
+              "outputField": "mosdepth_output"
             }
           }
         ],
         "cutoff_threshold": 250,
         "panel_bed": {
-          "$dnanexus_link": "file-G41B3f8433GqkYGV81F75gvp"
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433GxkgqK2GJj79fP"
+          }
+        },
+        "per_chromosome_coverage": true
+      }
+    },
+    {
+      "id": "stage-G9x7pbj41bQx1XXKGKXJxv7K",
+      "executable": "app-eggd_generate_vcf_metadata/1.0.0",
+      "folder": "generate_vcf_metadata_v1.0.0",
+      "input": {
+        "vcfs": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
+              "outputField": "variants_vcf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-G9x7x0Q41bQkpZXgBGzqGqX5",
+      "executable": "applet-G5YG118433Gk5xPbGx172fq8",
+      "folder": "somalier_extract_v1.0.2",
+      "input": {
+        "sample_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-G0qpY1Q433GpzBp958KJYfBK",
+            "outputField": "variants_vcf"
+          }
+        },
+        "reference_genome": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+          }
+        },
+        "reference_genome_index": {
+          "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
+        },
+        "snp_site_vcf": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vXxp8433Gz8jz02fbyKzVj"
+          }
         }
       }
     }
