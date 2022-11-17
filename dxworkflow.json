@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.10.0",
-  "title": "uranus_main_workflow_GRCh38_v1.10.0",
+  "name": "uranus_main_workflow_GRCh38_v1.11.0",
+  "title": "uranus_main_workflow_GRCh38_v1.11.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -42,8 +42,8 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.6.1",
+      "folder": "eggd_vcf_handler_for_uranus_v2.6.1",
       "input": {
         "mutect2_bed": {
           "$dnanexus_link": {
