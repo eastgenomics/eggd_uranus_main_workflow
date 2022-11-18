@@ -2,7 +2,7 @@
 
 DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 
-This workflow is a modified version of v1.9.1 (Novaseq) that is compatible with data produced by the Novaseq Instrument
+This workflow is a modified version of v1.11.0 (Novaseq) that is compatible with data produced by the Novaseq Instrument
 
 ---
 
