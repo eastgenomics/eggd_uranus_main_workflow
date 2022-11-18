@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.10.0",
-  "title": "uranus_main_workflow_GRCh38_v1.10.0",
+  "name": "uranus_main_workflow_GRCh38_v1.11.0",
+  "title": "uranus_main_workflow_GRCh38_v1.11.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -42,8 +42,8 @@
     },
     {
       "id": "stage-G21GYKj4q5J37F0B5ky018QG",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.6.1",
+      "folder": "eggd_vcf_handler_for_uranus_v2.6.1",
       "input": {
         "mutect2_bed": {
           "$dnanexus_link": {
@@ -283,6 +283,55 @@
           "$dnanexus_link": {
             "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
             "id": "file-G9vXxp8433Gz8jz02fbyKzVj"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-GJq28Pj4y1bKyQJkBjJbJpP7",
+      "executable": "app-eggd_sompy/1.0.0",
+      "folder": "eggd_sompy_v1.0.0",
+      "input": {
+        "query_vcf": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-G0qpY1Q433GpzBp958KJYfBK"
+          }
+        },
+        "truth_vcf": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GF3BJJj433Gzgy6qJGx52Gjg"
+          }
+        },
+        "panel_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433Gg2bP9GP72pxKJ"
+          }
+        },
+        "truth_high_confidence_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GF3BJ1j433GZgy5x486Xyk5B"
+          }
+        },
+        "pkrusche_happy_docker": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GFGbK48433GzV4y54b25p43Z"
+          }
+        },
+        "reference_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+          }
+        },
+        "reference_index_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-FyFGvzQ41zgBq7xf4Gy9Q28g"
           }
         }
       }
