@@ -24,4 +24,4 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 |athena             |1.4.0|
 |generate_vcf_metadata |1.0.0|
 |somalier_extract   |1.0.2|
-|sompy              |1.0.0|
+|sompy              |1.0.1|
