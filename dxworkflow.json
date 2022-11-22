@@ -290,7 +290,7 @@
     {
       "id": "stage-GJq28Pj4y1bKyQJkBjJbJpP7",
       "executable": "app-eggd_sompy/1.0.1",
-      "folder": "eggd_sompy_v1.0.0",
+      "folder": "eggd_sompy_v1.0.1",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
