@@ -30,35 +30,24 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 
 |  App 	|  Input file 	| Version  	|
 |---	|---	|---	|
-|sentieon_bwa_mem   | [GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q)   | not versioned |
-|  | [GRCh38.no_alt_analysis_set_chr_mask21.bwa-index.tar.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4p4K040Pgy8XjKG41ZqzxZ)    | not versioned |
-|sentieon_bam_to_vcf | [ GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q) | not versioned |
-|   |[GRCh38.gatk.resource.bundle.tar.gz](https://platform.dnanexus.com/panx/projects/F3zqGV04fXX5j7566869fjFq/data/?scope=project&id.values=file-F3zvKp84fXX8qJx43zZXP395)   | not versioned |
-|cgppindel  |[GRCh38.no_alt_analysis_set_chr_mask21.fa.fai](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-G00jqQj4J7Byv963KkZ40kXv)| not versioned |
-|   |[GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q)| not versioned |
-||[TA2_S59_L008_tumor_markdup.bam](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy9BXxQ40vjGfxP46Jb78Xf1)|not versioned|
-||[simpleRepeats_sorted.bed.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz0Q2GQ41zgB8BK7143y65Q1)|not versioned|
-||[coding_unrestricted_GRCh38_myeloid_v1.0.bed](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-FybyxV841zgB8v1y3fFbFB0G) |v1.0|
+|cgppindel|[TA2_S59_L008_tumor_markdup.bam](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy9BXxQ40vjGfxP46Jb78Xf1)|not versioned|
 ||[TA2_S59_L008_tumor_markdup.bam.bai](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy9BXxQ40vj7qPJq1Kppjx0F)|not versioned|
+||[simpleRepeats_sorted.bed.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz0Q2GQ41zgB8BK7143y65Q1)|not versioned|
+||[simpleRepeats_sorted.bed.gz.tbi](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz0Q2Kj41zg0Fgk4G70P9P1X)|not versioned|
+||[coding_unrestricted_GRCh38_myeloid_v1.0.bed](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-FybyxV841zgB8v1y3fFbFB0G) |v1.0|
 ||[normalPanel.gff3.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz8Q0vj41zg6j03fP1vbvfFp)|not versioned|
 ||[targetedRules.lst](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz8xvQj41zgGg10ZJzx8Qz53)|not versioned|
-||[simpleRepeats_sorted.bed.gz.tbi](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz0Q2Kj41zg0Fgk4G70P9P1X)|not versioned|
 ||[cgppindel_image.tar.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fz0KxFj4KB7fxxZ06vy2B2P3)|not versioned|
 |verifybamid|[Omni25_genotypes_1525_samples_v2.b38.PASS.ALL.sites.vcf.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-G07zJxj41zgF593x6j7bqZ7X)|not versioned|
 |picardqc|[Probes_GRCh38_HaemOnc_v2.0.bed](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vKbv0433GjJv1j7gp0P9vx)|v2.0|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fasta-index.tar.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4j2G04qB6zQK885B5Q8Pqp)|not versioned|
-|athena|[hgmd_pro_2020.1_hg38.vcf](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-FyZfyqQ41zg5FjK2GykYfKq8)| not versioned|
+|athena|[hgmd_pro_2020.1_hg38.vcf](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-FyZfyqQ41zg5FjK2GykYfKq8)| version 2020.1|
 ||[exons_cellbase_GRCh38_5bp_flank_v2.0.0.tsv](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vKbv0433GVJQ4BK701FjBB)| v2.0.0|
 ||[coding_unrestricted_athena_GRCh38_myeloid_5bp_flank_v2.0.0.bed](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vKbv0433GxkgqK2GJj79fP)| v2.0.0|
-|somalier_extract| [GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q)|not versioned|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fasta-index.tar.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4j2G04qB6zQK885B5Q8Pqp)|not versioned|
-||[sites.hg38.vcf](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vXxp8433Gz8jz02fbyKzVj)|not versioned|
+|somalier_extract|[sites.hg38.vcf](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vXxp8433Gz8jz02fbyKzVj)|not versioned|
 |sompy|[Horizon_44799.HD827.hg38.high_confident_NGS_and_ddPCR_variants.vcf.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-GF3BJJj433Gzgy6qJGx52Gjg)|not versioned|
 ||[coding_unrestricted_GRCh38_myeloid_5bp_flank_v2.0.0.bed](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vKbv0433Gg2bP9GP72pxKJ)|v2.0.0|
 ||[HD827_variant_annotation.bed](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-GF3BJ1j433GZgy5x486Xyk5B)|not versioned|
 ||[pkrusche_happy_v0.3.9.tar.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-GFGbK48433GzV4y54b25p43Z)|v0.3.9|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q)|not versioned|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fa.fai](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-FyFGvzQ41zgBq7xf4Gy9Q28g)|not versioned|
 |eggd_vcf_handler_for_uranus|[coding_unrestricted_GRCh38_myeloid_5bp_flank_v2.0.0.bed](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G9vKbv0433Gg2bP9GP72pxKJ)|v2.0.0|
 ||[pindel_cgppindel_filtering_coordinates_v1.0.bed](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-G0bFvXQ433GZJq780QgxZxKf)|v1.0|
 ||[clinvar_20230218_b38_withchr.vcf.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/annotation/b38/clinvar)|version 20230218|
@@ -71,8 +60,6 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid project
 ||[CosmicCodingMuts_GRCh38_v94.normal.vcf.gz.tbi](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G64K4bj433GZ35xJJ7YXGvzv)|v94|
 ||[CosmicNonCodingVariants_GRCh38_v94.normal.vcf.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G64K0VQ433GV03462J6GXb9Z)|v94|
 ||[CosmicNonCodingVariants_GRCh38_v94.normal.vcf.gz.tbi](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G64K4j8433Gb0PgpFgbzjj1b)|v94|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fa.gz](https://platform.dnanexus.com/panx/projects/G21BGP84q5JFYf168QjZ58Vz/data/?scope=project&id.values=file-Fy4gjFj41zgGjKJ85FYYPX4q)|not versioned|
-||[GRCh38.no_alt_analysis_set_chr_mask21.fa.fai](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-FyFGvzQ41zgBq7xf4Gy9Q28g)|not versioned|
 ||[vep_v103.1_docker.tar.gz](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G61zff8433Gy2KQX7Q2z150B)|v103.1|
 ||[plugin_config.txt](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G61zfvj433GxkQXF414xP1yF)| not versioned|
 ||[ CADD.pm](https://platform.dnanexus.com/panx/projects/Fkb6Gkj433GVVvj73J7x8KbV/data/?scope=project&id.values=file-G620928433Gy9p2b27zb8JFV)|not versioned|
