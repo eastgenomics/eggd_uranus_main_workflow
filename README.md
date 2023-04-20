@@ -1,12 +1,8 @@
 # eggd_uranus_workflow (DNAnexus Platform Workflow)
 
-DNAnexus Uranus workflow to support the Haem-Onc myeloid project
-
-This workflow is a modified version of v1.9.1 (Novaseq) that is compatible with data produced by the Novaseq Instrument
+DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 
 ---
-
-## Current Version: 1.10.0
 
 ![Image of workflow](images/workflow.png)
 
@@ -24,5 +20,4 @@ This workflow is a modified version of v1.9.1 (Novaseq) that is compatible with 
 |samtools_flagstat  |1.0.0|
 |mosdepth           |1.0.1|
 |athena             |1.4.0|
-|generate_vcf_metadata |1.0.0|
 |somalier_extract   |1.0.2|
