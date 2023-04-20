@@ -6,38 +6,19 @@
     {
       "id": "stage-sentieon_bwa",
       "executable": "app-sentieon-bwa/3.2.0",
-      "folder": "sentieon_bam",
-      "input": {
-        "genome_fastagz": {
-          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-        },
-        "genomebwaindex_targz": {
-          "$dnanexus_link": "file-Fy4p4K040Pgy8XjKG41ZqzxZ"
-        }
-      }
+      "folder": "sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
       "executable": "app-sentieon-tnbam/3.2.0",
       "folder": "sentieon_vcfs",
       "input": {
-        "genome_fastagz": {
-          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-        },
-        "gatk_resource_bundle": {
-          "$dnanexus_link": {
-            "project": "project-F3zqGV04fXX5j7566869fjFq",
-            "id": "file-F3zvKp84fXX8qJx43zZXP395"
-          }
-        },
         "mappings_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
           }
-        },
-        "run_bqsr": true,
-        "somatic_algo": "TNhaplotyper2"
+        }
       }
     },
     {
@@ -45,15 +26,6 @@
       "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
       "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
       "input": {
-        "mutect2_bed": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-G9vKbv0433Gg2bP9GP72pxKJ"
-          }
-        },
-        "pindel_bed": {
-          "$dnanexus_link": "file-G0bFvXQ433GZJq780QgxZxKf"
-        },
         "mutect2_vcf": {
           "$dnanexus_link": {
             "outputField": "variants_vcf",
@@ -79,50 +51,11 @@
       "executable": "applet-G7G43xQ433GjJ1Zk1yZ6Z622",
       "folder": "cgppindel_v1.0.1",
       "input": {
-        "reference_index": {
-          "$dnanexus_link": {
-            "project": "project-G21BGP84q5JFYf168QjZ58Vz",
-            "id": "file-G00jqQj4J7Byv963KkZ40kXv"
-          }
-        },
         "tumour": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
           }
-        },
-        "reference": {
-          "$dnanexus_link": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-        },
-        "normal": {
-          "$dnanexus_link": "file-Fy9BXxQ40vjGfxP46Jb78Xf1"
-        },
-        "simrep": {
-          "$dnanexus_link": "file-Fz0Q2GQ41zgB8BK7143y65Q1"
-        },
-        "tumour_index": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
-          }
-        },
-        "genes": {
-          "$dnanexus_link": "file-FybyxV841zgB8v1y3fFbFB0G"
-        },
-        "normal_index": {
-          "$dnanexus_link": "file-Fy9BXxQ40vj7qPJq1Kppjx0F"
-        },
-        "unmatched": {
-          "$dnanexus_link": "file-Fz8Q0vj41zg6j03fP1vbvfFp"
-        },
-        "filter": {
-          "$dnanexus_link": "file-Fz8xvQj41zgGg10ZJzx8Qz53"
-        },
-        "simrep_index": {
-          "$dnanexus_link": "file-Fz0Q2Kj41zg0Fgk4G70P9P1X"
-        },
-        "docker_image": {
-          "$dnanexus_link": "file-Fz0KxFj4KB7fxxZ06vy2B2P3"
         }
       }
     },
@@ -131,9 +64,6 @@
       "executable": "applet-G0Kb58Q433GVv31xKZXF169k",
       "folder": "verifybamid_v2.1.0",
       "input": {
-        "vcf_file": {
-          "$dnanexus_link": "file-G07zJxj41zgF593x6j7bqZ7X"
-        },
         "input_bam_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
@@ -158,15 +88,6 @@
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
           }
-        },
-        "bedfile": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-G9vKbv0433GjJv1j7gp0P9vx"
-          }
-        },
-        "fasta_index": {
-          "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
         }
       }
     },
@@ -213,19 +134,6 @@
       "executable": "app-eggd_athena/1.4.0",
       "folder": "eggd_athena_v1.4.0",
       "input": {
-        "snps": [
-          {
-            "$dnanexus_link": "file-FyZfyqQ41zg5FjK2GykYfKq8"
-          }
-        ],
-        "thresholds": "100, 250, 500, 1000, 1500",
-        "exons_file": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-G9vKbv0433GVJQ4BK701FjBB"
-          }
-        },
-        "summary": true,
         "mosdepth_files": [
           {
             "$dnanexus_link": {
@@ -233,15 +141,7 @@
               "outputField": "mosdepth_output"
             }
           }
-        ],
-        "cutoff_threshold": 250,
-        "panel_bed": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-G9vKbv0433GxkgqK2GJj79fP"
-          }
-        },
-        "per_chromosome_coverage": true
+        ]
       }
     },
     {
@@ -253,21 +153,6 @@
           "$dnanexus_link": {
             "stage": "stage-sentieon_tnbam",
             "outputField": "variants_vcf"
-          }
-        },
-        "reference_genome": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
-          }
-        },
-        "reference_genome_index": {
-          "$dnanexus_link": "file-Fy4j2G04qB6zQK885B5Q8Pqp"
-        },
-        "snp_site_vcf": {
-          "$dnanexus_link": {
-            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-            "id": "file-G9vXxp8433Gz8jz02fbyKzVj"
           }
         }
       }
