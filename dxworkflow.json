@@ -23,8 +23,8 @@
     },
     {
       "id": "stage-eggd_vcf_handler_for_uranus",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.6.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.6.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.7.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.7.0",
       "input": {
         "mutect2_vcf": {
           "$dnanexus_link": {
@@ -153,6 +153,19 @@
           "$dnanexus_link": {
             "stage": "stage-sentieon_tnbam",
             "outputField": "variants_vcf"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-sompy",
+      "executable": "app-eggd_sompy/1.0.1",
+      "folder": "eggd_sompy_v1.0.1",
+      "input": {
+        "query_vcf": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-sentieon_tnbam"
           }
         }
       }
