@@ -43,7 +43,39 @@
             "outputField": "vcf_index",
             "stage": "stage-cgppindel"
           }
-        }
+        },
+        "vep_annotation":[
+          {
+            "$dnanexus_link": "file-GPq3yF84J6BgY0vfYpqf9Z1X" 
+          },
+          {
+            "$dnanexus_link": "file-GPq3yY04J6BZV72ZV955PgVV"
+          },
+          {
+            "$dnanexus_link": "file-G61xbP0433GqX36p8QQxP3PV"
+          },
+          {
+            "$dnanexus_link": "file-G61xf3j433Gz49jf6XjKG4F0"
+          },
+          {
+            "$dnanexus_link": "file-G61xfZ0433Gj2vJ7P8k9ky2Z"
+          },
+          {
+            "$dnanexus_link": "file-G61y4Y8433GvyjJ52Fj5XjY5"
+          },
+          {
+            "$dnanexus_link": "file-G64Jfk0433GVp0JJPZ4Q8FzJ"
+          },
+          {
+            "$dnanexus_link": "file-G64K4bj433GZ35xJJ7YXGvzv"
+          },
+          {
+            "$dnanexus_link": "file-G64K0VQ433GV03462J6GXb9Z"
+          },
+          {
+            "$dnanexus_link": "file-G64K4j8433Gb0PgpFgbzjj1b"
+          }
+        ]
       }
     },
     {
@@ -168,6 +200,56 @@
             "stage": "stage-sentieon_tnbam"
           }
         }
+      }
+    },
+    {
+      "id": "stage-GJq28Pj4y1bKyQJkBjJbJpP7",
+      "executable": "app-eggd_sompy/1.0.1",
+      "folder": "eggd_sompy_v1.0.1",
+      "input": {
+        "query_vcf": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-G0qpY1Q433GpzBp958KJYfBK"
+          }
+        },
+        "truth_vcf": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GF3BJJj433Gzgy6qJGx52Gjg"
+          }
+        },
+        "panel_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-G9vKbv0433Gg2bP9GP72pxKJ"
+          }
+        },
+        "truth_high_confidence_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GF3BJ1j433GZgy5x486Xyk5B"
+          }
+        },
+        "pkrusche_happy_docker": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GFGbK48433GzV4y54b25p43Z"
+          }
+        },
+        "reference_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Fy4gjFj41zgGjKJ85FYYPX4q"
+          }
+        },
+        "reference_index_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-FyFGvzQ41zgBq7xf4Gy9Q28g"
+          }
+        },
+        "query_vcf_string": "Oncospan"
       }
     }
   ]
