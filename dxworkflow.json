@@ -159,8 +159,8 @@
     },
     {
       "id": "stage-sompy",
-      "executable": "app-eggd_sompy/1.0.1",
-      "folder": "eggd_sompy_v1.0.1",
+      "executable": "app-eggd_sompy/1.0.2",
+      "folder": "eggd_sompy_v1.0.2",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
