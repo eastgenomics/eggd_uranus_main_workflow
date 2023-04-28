@@ -146,7 +146,7 @@
     },
     {
       "id": "stage-somalier_extract",
-      "executable": "eggd_somalier_extract/1.1.0",
+      "executable": "app-eggd_somalier_extract/1.1.0",
       "folder": "somalier_extract_v1.1.0",
       "input": {
         "sample_vcf": {
