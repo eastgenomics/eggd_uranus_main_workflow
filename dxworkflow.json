@@ -61,8 +61,8 @@
     },
     {
       "id": "stage-verifybamid",
-      "executable": "applet-G0Kb58Q433GVv31xKZXF169k",
-      "folder": "verifybamid_v2.1.0",
+      "executable": "app-eggd_verifybamid/2.2.1",
+      "folder": "verifybamid_v2.2.1",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
