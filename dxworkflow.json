@@ -112,8 +112,8 @@
     },
     {
       "id": "stage-mosdepth",
-      "executable": "applet-Fxq07gQ433Gyz14j5ZZ1fzk1",
-      "folder": "eggd_mosdepth_v1.0.1",
+      "executable": "app-eggd_mosdepth/1.1.0",
+      "folder": "eggd_mosdepth_v1.1.0",
       "input": {
         "index": {
           "$dnanexus_link": {
