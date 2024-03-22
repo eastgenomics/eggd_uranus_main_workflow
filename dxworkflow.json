@@ -80,7 +80,7 @@
     },
     {
       "id": "stage-picard",
-      "executable": "app-eggd_picard_QC",
+      "executable": "app-eggd_picard_QC/1.1.0",
       "folder": "eggd_picardqc_v1.1.0",
       "input": {
         "sorted_bam": {
@@ -93,8 +93,8 @@
     },
     {
       "id": "stage-flagstat",
-      "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
-      "folder": "samtools_flagstat_v1.0.0",
+      "executable": "app-eggd_samtools_flagstat/1.1.0",
+      "folder": "samtools_flagstat_v1.1.0",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
