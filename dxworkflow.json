@@ -80,8 +80,8 @@
     },
     {
       "id": "stage-picard",
-      "executable": "applet-Fp69k884qBzVfbvP812F92gG",
-      "folder": "eggd_picardqc_v1.0.0",
+      "executable": "app-eggd_picard_QC",
+      "folder": "eggd_picardqc_v1.1.0",
       "input": {
         "sorted_bam": {
           "$dnanexus_link": {
