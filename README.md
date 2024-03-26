@@ -10,7 +10,6 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 
 |  App 	| Version  	|
 |---	|---	|
-|multi_fastqc       |1.1.0|
 |sentieon_bwa_mem   |3.2.0|
 |sentieon_bam_to_vcf|3.2.0|
 |eggd_vcf_handler_for_uranus|2.7.0|
