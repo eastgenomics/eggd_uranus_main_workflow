@@ -169,6 +169,19 @@
           }
         }
       }
+    },
+    {
+      "id": "stage-apheleia",
+      "executable": "app-eggd_apheleia/1.0.0",
+      "folder": "eggd_apheleia_v1.0.0",
+      "input": {
+        "query_vcf": {
+          "$dnanexus_link": {
+            "outputField": "exon_stats",
+            "stage": "stage-athena"
+          }
+        }
+      }
     }
   ]
 }
