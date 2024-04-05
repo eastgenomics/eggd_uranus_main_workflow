@@ -10,15 +10,15 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 
 |  App 	| Version  	|
 |---	|---	|
-|multi_fastqc       |1.1.0|
-|sentieon_bwa_mem   |3.2.0|
-|sentieon_bam_to_vcf|3.2.0|
-|eggd_vcf_handler_for_uranus|2.7.0|
+|sentieon-bwa   |3.2.0|
+|sentieon-tnbam|3.2.0|
 |cgppindel          |1.0.1|
 |verifybamid        |2.1.0|
 |picardqc           |1.0.0|
 |samtools_flagstat  |1.0.0|
 |mosdepth           |1.0.1|
 |athena             |1.4.0|
-|somalier_extract   |1.1.2|
+|somalier_extract   |1.1.0|
 |sompy              |1.0.2|
+|eggd_vcf_handler_for_uranus|2.7.0|
+|eggd_apheleia|1.0.0|
