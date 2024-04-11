@@ -172,10 +172,10 @@
     },
     {
       "id": "stage-apheleia",
-      "executable": "app-eggd_apheleia/1.0.0",
+      "executable": "applet-GjFvvyj4y308yGJJjZqv14Bf",
       "folder": "eggd_apheleia_v1.0.0",
       "input": {
-        "query_vcf": {
+        "exon_stats": {
           "$dnanexus_link": {
             "outputField": "exon_stats",
             "stage": "stage-athena"
