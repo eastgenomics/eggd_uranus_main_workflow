@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.12.0",
-  "title": "uranus_main_workflow_GRCh38_v1.12.0",
+  "name": "uranus_main_workflow_GRCh38_v1.13.0",
+  "title": "uranus_main_workflow_GRCh38_v1.13.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -166,6 +166,19 @@
           "$dnanexus_link": {
             "outputField": "variants_vcf",
             "stage": "stage-sentieon_tnbam"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-apheleia",
+      "executable": "app-GjGX0zj4k9JG75xf8P2fZz73",
+      "folder": "eggd_apheleia",
+      "input": {
+        "exon_stats": {
+          "$dnanexus_link": {
+            "outputField": "exon_stats",
+            "stage": "stage-athena"
           }
         }
       }
