@@ -172,8 +172,8 @@
     },
     {
       "id": "stage-apheleia",
-      "executable": "applet-GjFvvyj4y308yGJJjZqv14Bf",
-      "folder": "eggd_apheleia_v1.0.0",
+      "executable": "app-GjGX0zj4k9JG75xf8P2fZz73",
+      "folder": "eggd_apheleia",
       "input": {
         "exon_stats": {
           "$dnanexus_link": {
