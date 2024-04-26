@@ -21,4 +21,4 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 |somalier_extract   |1.1.0|
 |sompy              |1.0.2|
 |eggd_vcf_handler_for_uranus|2.7.0|
-|eggd_apheleia|1.0.0|
+|eggd_apheleia|1.0.1|

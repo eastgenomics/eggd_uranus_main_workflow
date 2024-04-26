@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v1.13.0",
-  "title": "uranus_main_workflow_GRCh38_v1.13.0",
+  "name": "uranus_main_workflow_GRCh38_v1.13.1",
+  "title": "uranus_main_workflow_GRCh38_v1.13.1",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -172,7 +172,7 @@
     },
     {
       "id": "stage-apheleia",
-      "executable": "app-GjGX0zj4k9JG75xf8P2fZz73",
+      "executable": "app-eggd_apheleia/1.0.1",
       "folder": "eggd_apheleia",
       "input": {
         "exon_stats": {
