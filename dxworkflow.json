@@ -172,7 +172,7 @@
     },
     {
       "id": "stage-apheleia",
-      "executable": "app-GjGX0zj4k9JG75xf8P2fZz73",
+      "executable": "app-eggd_apheleia/1.0.1",
       "folder": "eggd_apheleia",
       "input": {
         "exon_stats": {
