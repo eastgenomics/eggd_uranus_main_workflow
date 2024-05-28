@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "uranus_main_workflow_GRCh38_v2.0.0",
   "title": "uranus_main_workflow_GRCh38_v2.0.0",
+=======
+  "name": "uranus_main_workflow_GRCh38_v1.13.2",
+  "title": "uranus_main_workflow_GRCh38_v1.13.2",
+>>>>>>> dd5b5342338a78ebdad9001ca998eda8a521dca1
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -48,8 +53,8 @@
     },
     {
       "id": "stage-cgppindel",
-      "executable": "applet-G7G43xQ433GjJ1Zk1yZ6Z622",
-      "folder": "cgppindel_v1.0.1",
+      "executable": "app-eggd_cgppindel/1.1.0",
+      "folder": "eggd_cgppindel",
       "input": {
         "tumour": {
           "$dnanexus_link": {
@@ -159,13 +164,26 @@
     },
     {
       "id": "stage-sompy",
-      "executable": "app-eggd_sompy/1.0.2",
-      "folder": "eggd_sompy_v1.0.2",
+      "executable": "app-eggd_sompy/1.0.3",
+      "folder": "eggd_sompy_v1.0.3",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
             "outputField": "variants_vcf",
             "stage": "stage-sentieon_tnbam"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-apheleia",
+      "executable": "app-eggd_apheleia/1.0.1",
+      "folder": "eggd_apheleia",
+      "input": {
+        "exon_stats": {
+          "$dnanexus_link": {
+            "outputField": "exon_stats",
+            "stage": "stage-athena"
           }
         }
       }
