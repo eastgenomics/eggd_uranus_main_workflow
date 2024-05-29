@@ -17,7 +17,6 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 |picardqc           |1.1.0|
 |samtools_flagstat  |1.1.0|
 |mosdepth           |1.1.0|
-=======
 |cgppindel          |1.1.0|
 |verifybamid        |2.1.0|
 |picardqc           |1.0.0|
