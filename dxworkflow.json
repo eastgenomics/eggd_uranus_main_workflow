@@ -61,8 +61,8 @@
     },
     {
       "id": "stage-verifybamid",
-      "executable": "applet-G0Kb58Q433GVv31xKZXF169k",
-      "folder": "verifybamid_v2.1.0",
+      "executable": "app-eggd_verifybamid/2.2.1",
+      "folder": "verifybamid_v2.2.1",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
@@ -80,8 +80,8 @@
     },
     {
       "id": "stage-picard",
-      "executable": "applet-Fp69k884qBzVfbvP812F92gG",
-      "folder": "eggd_picardqc_v1.0.0",
+      "executable": "app-eggd_picard_QC/1.1.0",
+      "folder": "eggd_picardqc_v1.1.0",
       "input": {
         "sorted_bam": {
           "$dnanexus_link": {
@@ -93,8 +93,8 @@
     },
     {
       "id": "stage-flagstat",
-      "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
-      "folder": "samtools_flagstat_v1.0.0",
+      "executable": "app-eggd_samtools_flagstat/1.1.0",
+      "folder": "samtools_flagstat_v1.1.0",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
@@ -112,8 +112,8 @@
     },
     {
       "id": "stage-mosdepth",
-      "executable": "applet-Fxq07gQ433Gyz14j5ZZ1fzk1",
-      "folder": "eggd_mosdepth_v1.0.1",
+      "executable": "app-eggd_mosdepth/1.1.0",
+      "folder": "eggd_mosdepth_v1.1.0",
       "input": {
         "index": {
           "$dnanexus_link": {
