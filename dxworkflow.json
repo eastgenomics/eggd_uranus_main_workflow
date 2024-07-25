@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.0.0",
-  "title": "uranus_main_workflow_GRCh38_v2.0.0",
+  "name": "uranus_main_workflow_GRCh38_v2.1.0",
+  "title": "uranus_main_workflow_GRCh38_v2.1.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -23,8 +23,8 @@
     },
     {
       "id": "stage-eggd_vcf_handler_for_uranus",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.7.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.7.0",
+      "executable": "app-eggd_vcf_handler_for_uranus/2.8.0",
+      "folder": "eggd_vcf_handler_for_uranus_v2.8.0",
       "input": {
         "mutect2_vcf": {
           "$dnanexus_link": {
@@ -48,7 +48,7 @@
     },
     {
       "id": "stage-cgppindel",
-      "executable": "app-eggd_cgppindel/1.1.0",
+      "executable": "app-eggd_cgppindel/1.2.0",
       "folder": "eggd_cgppindel",
       "input": {
         "tumour": {
@@ -159,8 +159,8 @@
     },
     {
       "id": "stage-sompy",
-      "executable": "app-eggd_sompy/1.0.3",
-      "folder": "eggd_sompy_v1.0.3",
+      "executable": "app-eggd_sompy/1.0.4",
+      "folder": "eggd_sompy_v1.0.4",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
