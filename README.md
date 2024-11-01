@@ -4,7 +4,7 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 
 ---
 
-![Image of workflow](images/workflow.png)
+![Image of workflow](images/uranus_workflow.png)
 
 ## What apps are used in this workflow?
 

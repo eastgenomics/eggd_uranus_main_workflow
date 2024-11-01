@@ -1,0 +1,251 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram id="0mtNwWMX5RvCy_MMxNth" name="Page-1">
+    <mxGraphModel dx="447" dy="1693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-1" target="ZRLuNuVFItN3rF2Vi_rz-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1425" y="-240" />
+              <mxPoint x="1425" y="-240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-1" value="&lt;b&gt;Sentieon BWA-MEM:&lt;br&gt;&lt;/b&gt;Perform BWA alignment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1334.66" y="-310" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-3" target="ZRLuNuVFItN3rF2Vi_rz-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-3" target="ZRLuNuVFItN3rF2Vi_rz-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-3" value="&lt;b&gt;.fastq &lt;/b&gt;demultiplexed&lt;br&gt;sample reads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1349.66" y="-430" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-4" target="ZRLuNuVFItN3rF2Vi_rz-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1400" y="-120" />
+              <mxPoint x="1320" y="-120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1442.7" y="-120" />
+              <mxPoint x="1542.7" y="-120" />
+              <mxPoint x="1542.7" y="-70" />
+            </Array>
+            <mxPoint x="1442.7" y="-180" as="sourcePoint" />
+            <mxPoint x="1541.9799999999998" y="-70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-4" target="ZRLuNuVFItN3rF2Vi_rz-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="-205" />
+              <mxPoint x="1680" y="-310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-4" target="ZRLuNuVFItN3rF2Vi_rz-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="-205" />
+              <mxPoint x="1680" y="-240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-4" target="ZRLuNuVFItN3rF2Vi_rz-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="-205" />
+              <mxPoint x="1680" y="-170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-4" target="ZRLuNuVFItN3rF2Vi_rz-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="-205" />
+              <mxPoint x="1680" y="-100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-4" value="&amp;nbsp;&lt;b&gt;.bam&lt;/b&gt;&amp;nbsp;sample sorted files&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1352.49" y="-230" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-7" target="ZRLuNuVFItN3rF2Vi_rz-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-7" value="&lt;b&gt;Cgppindel:&lt;/b&gt;&lt;br&gt;Variant calling for somatic indels" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1230.04" y="-70" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-8" value="&lt;b&gt;Sentieon Somatic &lt;br&gt;tnhaplotyper 2:&lt;br&gt;&lt;/b&gt;Performs somatic variant &lt;br&gt;calling for small variants" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1449.28" y="-70" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-9" target="ZRLuNuVFItN3rF2Vi_rz-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-9" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;.vcf&amp;nbsp;&lt;/b&gt;sample somatic&lt;br&gt;large indels&lt;/span&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1244.96" y="10" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-10" target="ZRLuNuVFItN3rF2Vi_rz-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1540" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-10" target="ZRLuNuVFItN3rF2Vi_rz-20" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="35" />
+              <mxPoint x="1680" y="-10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-10" target="ZRLuNuVFItN3rF2Vi_rz-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="35" />
+              <mxPoint x="1680" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-10" value="&lt;b&gt;.vcf&amp;nbsp;&lt;/b&gt;small variants" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1460.49" y="10" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-12" target="ZRLuNuVFItN3rF2Vi_rz-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1430" y="160" />
+              <mxPoint x="1430" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-12" value="&lt;b&gt;VCF handler for Uranus:&lt;br&gt;&lt;/b&gt;Generates excel reports with&lt;br&gt;annotated variants" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1339.8700000000001" y="90" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-13" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;.xlsx&amp;nbsp;&lt;/b&gt;reports workflow for scientists&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1354.78" y="170" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-15" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1990" y="-405" />
+              <mxPoint x="1990" y="-205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeWidth=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1990" y="-370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-15" value="&lt;b&gt;Multi FastQC:&lt;br&gt;&lt;/b&gt;Performs simple quality control checks on raw data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1758.16" y="-435" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-16" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1990" y="-300" />
+              <mxPoint x="1990" y="-205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-16" value="&lt;b&gt;Mosdepth:&lt;br&gt;&lt;/b&gt;Calculates per-base coverages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1758.1600000000003" y="-340" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-17" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-17" value="&lt;b&gt;Samtools Flagstat:&lt;br&gt;&lt;/b&gt;Quantify number of allignments for each FLAG field in .bam" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1759.2400000000002" y="-270" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-18" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-18" value="&lt;b&gt;Picard QC:&lt;br&gt;&lt;/b&gt;QC for mapped reads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1759.2300000000002" y="-200" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-19" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1990" y="-100" />
+              <mxPoint x="1990" y="-205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-19" value="&lt;b&gt;VerifyBamID:&lt;br&gt;&lt;/b&gt;Detects sample contamination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1759.2400000000002" y="-130" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-20" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-20" value="&lt;b&gt;Sompy:&lt;br&gt;&lt;/b&gt;Compares the control VCF to the truth VCF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1759.7700000000002" y="-40" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-21" target="ZRLuNuVFItN3rF2Vi_rz-71" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-21" value="&lt;b&gt;Apheleia:&lt;br&gt;&lt;/b&gt;Predicts presence of PTDs in KMT2A gene" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="2041.58" y="-435" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-23" target="ZRLuNuVFItN3rF2Vi_rz-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-23" target="ZRLuNuVFItN3rF2Vi_rz-70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-23" value="&lt;b&gt;Athena:&lt;br&gt;&lt;/b&gt;Generate coverage reports of genomic regions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="2041.5800000000004" y="-340" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-24" target="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-24" value="&lt;b&gt;Somalier:&lt;br&gt;&lt;/b&gt;Extracts sites from VCF for sex check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1758.6900000000003" y="30" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-25" target="ZRLuNuVFItN3rF2Vi_rz-69" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1990" y="-310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-25" value="&lt;b&gt;MultiQC:&lt;br&gt;&lt;/b&gt;Aggregates QC results and compiles a .html report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="2041.58" y="-235" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.527;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-8" target="ZRLuNuVFItN3rF2Vi_rz-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-69" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;QC report &lt;b&gt;.html&lt;/b&gt;&amp;nbsp;of entire run&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+          <mxGeometry x="2280" y="-230" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-70" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;.html &lt;/b&gt;coverage report per sample&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+          <mxGeometry x="2280" y="-335" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-71" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;.tsv&lt;/b&gt;&amp;nbsp;apheleia report per sample&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+          <mxGeometry x="2280" y="-430" width="150.17" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.009;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-16" target="ZRLuNuVFItN3rF2Vi_rz-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1960" y="-320" />
+              <mxPoint x="1960" y="-320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
