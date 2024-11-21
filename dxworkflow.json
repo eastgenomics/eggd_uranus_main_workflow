@@ -1,47 +1,22 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.1.0",
-  "title": "uranus_main_workflow_GRCh38_v2.1.0",
+  "name": "uranus_main_workflow_GRCh38_v2.2.0",
+  "title": "uranus_main_workflow_GRCh38_v2.2.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
       "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/3.2.0",
+      "executable": "app-sentieon-bwa/4.2.2",
       "folder": "sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
-      "executable": "app-sentieon-tnbam/3.2.0",
+      "executable": "app-sentieon-tnbam/5.0.1",
       "folder": "sentieon_vcfs",
       "input": {
         "mappings_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
-          }
-        }
-      }
-    },
-    {
-      "id": "stage-eggd_vcf_handler_for_uranus",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.8.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.8.0",
-      "input": {
-        "mutect2_vcf": {
-          "$dnanexus_link": {
-            "outputField": "variants_vcf",
-            "stage": "stage-sentieon_tnbam"
-          }
-        },
-        "pindel_vcf": {
-          "$dnanexus_link": {
-            "outputField": "output_vcf",
-            "stage": "stage-cgppindel"
-          }
-        },
-        "pindel_vcf_idx": {
-          "$dnanexus_link": {
-            "outputField": "vcf_index",
-            "stage": "stage-cgppindel"
           }
         }
       }
@@ -182,6 +157,93 @@
           }
         }
       }
+    },
+    {
+      "id": "stage-GvzQq404k99pjxqGXv69J6z8",
+      "executable": "app-eggd_vep/1.3.0",
+      "folder": "eggd_vep",
+      "input": {
+        "vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-cgppindel",
+            "outputField": "output_vcf_with_vaf"
+          }
+        },
+        "config_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Gv3p95042ffxgbGqgQz3GGQP"
+          }
+        },
+        "panel_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Gqy3qk847xBjBk1G7YV6YJ9V"
+          }
+        },
+        "normalise": false
+      }
+    },
+    {
+      "id": "stage-GvzQq504k99YG9zqGFqGjvJ8",
+      "executable": "app-eggd_vep/1.3.0",
+      "folder": "eggd_vep",
+      "input": {
+        "vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_tnbam",
+            "outputField": "variants_vcf"
+          }
+        },
+        "config_file": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Gv3p95042ffxgbGqgQz3GGQP"
+          }
+        },
+        "panel_bed": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Gqy4V1Q47xBXYzfKxb22fGXz"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-GvzQq9Q4k99zkvJxKXPxbj9P",
+      "executable": "app-eggd_vcf_rescue/1.2.0",
+      "folder": "eggd_vcf_rescue",
+      "input": {
+        "filtered_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-GvzQq504k99YG9zqGFqGjvJ8",
+            "outputField": "annotated_vcf"
+          }
+        },
+        "unfiltered_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-GvzQq504k99YG9zqGFqGjvJ8",
+            "outputField": "annotated_vcf"
+          }
+        },
+        "rescue_vcf": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-GjFv9X0421zQFGxXVFQ4j972"
+          }
+        },
+        "fasta_tar": {
+          "$dnanexus_link": {
+            "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+            "id": "file-Gb772VQ4XGyzQ0Zk615XbZ0X"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-GvzQq704k99YJVfBYj9gJXPk",
+      "executable": "app-eggd_generate_variant_workbook/2.9.0",
+      "folder": "eggd_generate_variant_workbook"
     }
   ]
 }
