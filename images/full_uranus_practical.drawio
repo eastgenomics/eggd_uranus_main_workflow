@@ -75,7 +75,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-4" value="&amp;nbsp;&lt;b&gt;.bam&lt;/b&gt;&amp;nbsp;sample sorted files&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-4" value="&amp;nbsp;&lt;b&gt;.bam&lt;/b&gt;&amp;nbsp;sequence alignment&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="1352.49" y="-230" width="150.17" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZRLuNuVFItN3rF2Vi_rz-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-7" target="ZRLuNuVFItN3rF2Vi_rz-9" edge="1">
