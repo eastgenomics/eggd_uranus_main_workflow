@@ -5,12 +5,12 @@
   "stages": [
     {
       "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/4.2.2",
+      "executable": "app-sentieon-bwa/3.2.0",
       "folder": "sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
-      "executable": "app-sentieon-tnbam/5.0.1",
+      "executable": "app-sentieon-tnbam/3.2.0",
       "folder": "sentieon_vcfs",
       "input": {
         "mappings_bam": {
@@ -191,13 +191,13 @@
       "input": {
         "filtered_vcf": {
           "$dnanexus_link": {
-            "stage": "stage-GvzQq504k99YG9zqGFqGjvJ8",
+            "stage": "stage-eggd_vep_mutect2",
             "outputField": "annotated_vcf"
           }
         },
         "unfiltered_vcf": {
           "$dnanexus_link": {
-            "stage": "stage-GvzQq504k99YG9zqGFqGjvJ8",
+            "stage": "stage-eggd_vep_mutect2",
             "outputField": "annotated_vcf"
           }
         }
@@ -206,7 +206,25 @@
     {
       "id": "stage-eggd_generate_variant_workbook",
       "executable": "app-eggd_generate_variant_workbook/2.9.0",
-      "folder": "eggd_generate_variant_workbook"
+      "folder": "eggd_generate_variant_workbook",
+      "input": {
+        "vcfs":  [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-eggd_vcf_rescue",
+              "outputField": "output_vcf"
+            }
+          }
+        ],
+        "additional_files": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-eggd_vep_cgppindel",
+              "outputField": "annotated_vcf"
+            }
+          }
+        ]
+      }
     }
   ]
 }
