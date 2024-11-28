@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.1.0",
-  "title": "uranus_main_workflow_GRCh38_v2.1.0",
+  "name": "uranus_main_workflow_GRCh38_v2.2.0",
+  "title": "uranus_main_workflow_GRCh38_v2.2.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -17,31 +17,6 @@
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
-          }
-        }
-      }
-    },
-    {
-      "id": "stage-eggd_vcf_handler_for_uranus",
-      "executable": "app-eggd_vcf_handler_for_uranus/2.8.0",
-      "folder": "eggd_vcf_handler_for_uranus_v2.8.0",
-      "input": {
-        "mutect2_vcf": {
-          "$dnanexus_link": {
-            "outputField": "variants_vcf",
-            "stage": "stage-sentieon_tnbam"
-          }
-        },
-        "pindel_vcf": {
-          "$dnanexus_link": {
-            "outputField": "output_vcf",
-            "stage": "stage-cgppindel"
-          }
-        },
-        "pindel_vcf_idx": {
-          "$dnanexus_link": {
-            "outputField": "vcf_index",
-            "stage": "stage-cgppindel"
           }
         }
       }
@@ -181,6 +156,74 @@
             "stage": "stage-athena"
           }
         }
+      }
+    },
+    {
+      "id": "stage-eggd_vep_cgppindel",
+      "executable": "app-eggd_vep/1.3.0",
+      "folder": "eggd_vep",
+      "input": {
+        "vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-cgppindel",
+            "outputField": "output_vcf_with_vaf"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-eggd_vep_mutect2",
+      "executable": "app-eggd_vep/1.3.0",
+      "folder": "eggd_vep",
+      "input": {
+        "vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_tnbam",
+            "outputField": "variants_vcf"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-eggd_vcf_rescue",
+      "executable": "app-eggd_vcf_rescue/1.2.0",
+      "folder": "eggd_vcf_rescue",
+      "input": {
+        "filtered_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-eggd_vep_mutect2",
+            "outputField": "annotated_vcf"
+          }
+        },
+        "unfiltered_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-eggd_vep_mutect2",
+            "outputField": "annotated_vcf"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-eggd_generate_variant_workbook",
+      "executable": "app-eggd_generate_variant_workbook/2.9.0",
+      "folder": "eggd_generate_variant_workbook",
+      "input": {
+        "vcfs":  [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-eggd_vcf_rescue",
+              "outputField": "output_vcf"
+            }
+          }
+        ],
+        "additional_files": [
+          {
+            "$dnanexus_link": {
+              "stage": "stage-eggd_vep_cgppindel",
+              "outputField": "annotated_vcf"
+            }
+          }
+        ]
       }
     }
   ]
