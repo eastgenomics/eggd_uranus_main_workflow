@@ -215,7 +215,7 @@
         <mxCell id="ZRLuNuVFItN3rF2Vi_rz-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.527;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ZRLuNuVFItN3rF2Vi_rz-8" target="ZRLuNuVFItN3rF2Vi_rz-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-69" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;QC report &lt;b&gt;.html&lt;/b&gt;&amp;nbsp;of entire run&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
+        <mxCell id="ZRLuNuVFItN3rF2Vi_rz-69" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;.&lt;b&gt;html&lt;/b&gt;&amp;nbsp;QC report of run&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
           <mxGeometry x="2280" y="-230" width="150.17" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZRLuNuVFItN3rF2Vi_rz-70" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;.html &lt;/b&gt;coverage report per sample&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" parent="1" vertex="1">
