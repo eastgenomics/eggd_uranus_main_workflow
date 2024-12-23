@@ -5,12 +5,12 @@
   "stages": [
     {
       "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/3.2.0",
+      "executable": "app-sentieon-bwa/4.2.2",
       "folder": "sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
-      "executable": "app-sentieon-tnbam/3.2.0",
+      "executable": "app-sentieon-tnbam/5.0.1",
       "folder": "sentieon_vcfs",
       "input": {
         "mappings_bam": {
