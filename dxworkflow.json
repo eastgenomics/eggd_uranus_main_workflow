@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.2.0",
-  "title": "uranus_main_workflow_GRCh38_v2.2.0",
+  "name": "uranus_main_workflow_GRCh38_v2.3.0",
+  "title": "uranus_main_workflow_GRCh38_v2.3.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {

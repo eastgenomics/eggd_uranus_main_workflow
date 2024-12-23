@@ -10,8 +10,8 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 
 |  App 	| Version  	|
 |---	|---	|
-|sentieon-bwa   |3.2.0|
-|sentieon-tnbam|3.2.0|
+|sentieon-bwa   |4.2.2|
+|sentieon-tnbam|5.0.1|
 |cgppindel          |1.2.0|
 |verifybamid        |2.2.1|
 |picardqc           |1.1.0|
