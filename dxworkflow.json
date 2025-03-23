@@ -1,11 +1,11 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.3.0",
-  "title": "uranus_main_workflow_GRCh38_v2.3.0",
+  "name": "uranus_main_workflow_GRCh38_v2.4.0",
+  "title": "uranus_main_workflow_GRCh38_v2.4.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
-      "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/4.2.2",
+      "id": "stage-sentieon_umi",
+      "executable": "app-sentieon-umi/5.1.0",
       "folder": "sentieon_bam"
     },
     {
@@ -16,7 +16,7 @@
         "mappings_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -29,7 +29,7 @@
         "tumour": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -42,13 +42,13 @@
         "input_bam_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "input_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -61,7 +61,7 @@
         "sorted_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -74,13 +74,13 @@
         "input_bam_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "input_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -93,13 +93,13 @@
         "index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -224,6 +224,24 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "stage-sex_check",
+      "executable": "app-eggd_sex_check/1.1.0",
+      "input": {
+        "input_bam": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_umi",
+            "outputField": "mappings_bam"
+          }
+        },
+        "index_file": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_umi",
+            "outputField": "mappings_bam_bai"
+          }
+        }
       }
     }
   ]
