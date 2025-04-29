@@ -1,16 +1,16 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.4.0",
-  "title": "uranus_main_workflow_GRCh38_v2.4.0",
+  "name": "uranus_main_workflow_GRCh38_v2.5.0",
+  "title": "uranus_main_workflow_GRCh38_v2.5.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
       "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/4.2.2",
+      "executable": "app-sentieon-bwa/5.1.0",
       "folder": "sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
-      "executable": "app-sentieon-tnbam/5.0.1",
+      "executable": "app-sentieon-tnbam/5.1.0",
       "folder": "sentieon_vcfs",
       "input": {
         "mappings_bam": {
