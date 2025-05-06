@@ -18,7 +18,7 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 |samtools_flagstat  |1.1.0|
 |mosdepth           |1.1.0|
 |athena             |1.4.0|
-|somalier_extract   |1.1.0|
+|sex_check          |1.1.0|
 |sompy              |1.0.4|
 |eggd_apheleia|1.0.1|
 |eggd_vep|1.3.0|
