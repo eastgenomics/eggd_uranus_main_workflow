@@ -126,13 +126,13 @@
       "input": {
         "input_bam": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_dnaseq",
+            "stage": "stage-sentieon_bwa",
             "outputField": "mappings_bam"
           }
         },
         "index_file": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_dnaseq",
+            "stage": "stage-sentieon_bwa",
             "outputField": "mappings_bam_bai"
           }
         }
