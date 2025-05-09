@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v2.5.0",
-  "title": "uranus_main_workflow_GRCh38_v2.5.0",
+  "name": "uranus_main_workflow_GRCh38_v3.0.0",
+  "title": "uranus_main_workflow_GRCh38_v3.0.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -120,14 +120,20 @@
       }
     },
     {
-      "id": "stage-somalier_extract",
-      "executable": "app-eggd_somalier_extract/1.1.0",
-      "folder": "somalier_extract_v1.1.0",
+      "id": "stage-sex_check",
+      "executable": "app-eggd_sex_check/1.1.0",
+      "folder": "eggd_sex_check",
       "input": {
-        "sample_vcf": {
+        "input_bam": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_tnbam",
-            "outputField": "variants_vcf"
+            "stage": "stage-sentieon_bwa",
+            "outputField": "mappings_bam"
+          }
+        },
+        "index_file": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_bwa",
+            "outputField": "mappings_bam_bai"
           }
         }
       }
