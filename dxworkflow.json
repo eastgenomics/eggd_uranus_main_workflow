@@ -36,16 +36,16 @@
     },
     {
       "id": "stage-verifybamid",
-      "executable": "app-eggd_verifybamid/2.2.1",
-      "folder": "/verifybamid_v2.2.1",
+      "executable": "app-eggd_verifybamid/2.3.0",
+      "folder": "/verifybamid_v2.3.0",
       "input": {
-        "input_bam_index": {
+        "input_file_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
             "stage": "stage-sentieon_bwa"
           }
         },
-        "input_bam": {
+        "input_file": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
@@ -87,16 +87,16 @@
     },
     {
       "id": "stage-mosdepth",
-      "executable": "app-eggd_mosdepth/1.1.0",
-      "folder": "/eggd_mosdepth_v1.1.0",
+      "executable": "app-eggd_mosdepth/1.2.0",
+      "folder": "/eggd_mosdepth_v1.2.0",
       "input": {
-        "index": {
+        "alignment_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
             "stage": "stage-sentieon_bwa"
           }
         },
-        "bam": {
+        "alignment_file": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
