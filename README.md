@@ -13,10 +13,10 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 |sentieon-bwa   |5.1.0|
 |sentieon-tnbam|5.1.0|
 |cgppindel          |1.2.0|
-|verifybamid        |2.2.1|
+|verifybamid        |2.3.0|
 |picardqc           |1.1.0|
 |samtools_flagstat  |1.1.0|
-|mosdepth           |1.1.0|
+|mosdepth           |1.2.0|
 |athena             |1.4.0|
 |sex_check          |1.1.0|
 |sompy              |1.0.4|
