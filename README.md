@@ -23,4 +23,4 @@ DNAnexus Uranus workflow to support the Haem-Onc myeloid service
 |eggd_apheleia|1.0.1|
 |eggd_vep|1.3.0|
 |eggd_vcf_rescue|1.2.0|
-|eggd_generate_variant_workbook|2.10.1|
+|eggd_generate_variant_workbook|2.10.2|

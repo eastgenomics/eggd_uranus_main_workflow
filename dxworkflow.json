@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v3.0.0",
-  "title": "uranus_main_workflow_GRCh38_v3.0.0",
+  "name": "uranus_main_workflow_GRCh38_v3.0.1",
+  "title": "uranus_main_workflow_GRCh38_v3.0.1",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -211,7 +211,7 @@
     },
     {
       "id": "stage-eggd_generate_variant_workbook",
-      "executable": "app-eggd_generate_variant_workbook/2.10.1",
+      "executable": "app-eggd_generate_variant_workbook/2.10.2",
       "folder": "eggd_generate_variant_workbook",
       "input": {
         "vcfs":  [
