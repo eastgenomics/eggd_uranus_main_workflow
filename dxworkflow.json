@@ -1,17 +1,17 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v3.0.0",
-  "title": "uranus_main_workflow_GRCh38_v3.0.0",
+  "name": "uranus_main_workflow_GRCh38_v3.0.1",
+  "title": "uranus_main_workflow_GRCh38_v3.0.1",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
       "id": "stage-sentieon_bwa",
       "executable": "app-sentieon-bwa/5.1.0",
-      "folder": "sentieon_bam"
+      "folder": "/sentieon_bam"
     },
     {
       "id": "stage-sentieon_tnbam",
       "executable": "app-sentieon-tnbam/5.1.0",
-      "folder": "sentieon_vcfs",
+      "folder": "/sentieon_vcfs",
       "input": {
         "mappings_bam": {
           "$dnanexus_link": {
@@ -24,7 +24,7 @@
     {
       "id": "stage-cgppindel",
       "executable": "app-eggd_cgppindel/1.2.0",
-      "folder": "eggd_cgppindel",
+      "folder": "/eggd_cgppindel",
       "input": {
         "tumour": {
           "$dnanexus_link": {
@@ -37,7 +37,7 @@
     {
       "id": "stage-verifybamid",
       "executable": "app-eggd_verifybamid/2.2.1",
-      "folder": "verifybamid_v2.2.1",
+      "folder": "/verifybamid_v2.2.1",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
@@ -56,7 +56,7 @@
     {
       "id": "stage-picard",
       "executable": "app-eggd_picard_QC/1.1.0",
-      "folder": "eggd_picardqc_v1.1.0",
+      "folder": "/eggd_picardqc_v1.1.0",
       "input": {
         "sorted_bam": {
           "$dnanexus_link": {
@@ -69,7 +69,7 @@
     {
       "id": "stage-flagstat",
       "executable": "app-eggd_samtools_flagstat/1.1.0",
-      "folder": "samtools_flagstat_v1.1.0",
+      "folder": "/samtools_flagstat_v1.1.0",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
@@ -88,7 +88,7 @@
     {
       "id": "stage-mosdepth",
       "executable": "app-eggd_mosdepth/1.1.0",
-      "folder": "eggd_mosdepth_v1.1.0",
+      "folder": "/eggd_mosdepth_v1.1.0",
       "input": {
         "index": {
           "$dnanexus_link": {
@@ -107,7 +107,7 @@
     {
       "id": "stage-athena",
       "executable": "app-eggd_athena/1.4.0",
-      "folder": "eggd_athena_v1.4.0",
+      "folder": "/eggd_athena_v1.4.0",
       "input": {
         "mosdepth_files": [
           {
@@ -122,7 +122,7 @@
     {
       "id": "stage-sex_check",
       "executable": "app-eggd_sex_check/1.1.0",
-      "folder": "eggd_sex_check",
+      "folder": "/eggd_sex_check",
       "input": {
         "input_bam": {
           "$dnanexus_link": {
@@ -141,7 +141,7 @@
     {
       "id": "stage-sompy",
       "executable": "app-eggd_sompy/1.0.4",
-      "folder": "eggd_sompy_v1.0.4",
+      "folder": "/eggd_sompy_v1.0.4",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
@@ -154,7 +154,7 @@
     {
       "id": "stage-apheleia",
       "executable": "app-eggd_apheleia/1.0.1",
-      "folder": "eggd_apheleia",
+      "folder": "/eggd_apheleia",
       "input": {
         "exon_stats": {
           "$dnanexus_link": {
@@ -167,7 +167,7 @@
     {
       "id": "stage-eggd_vep_cgppindel",
       "executable": "app-eggd_vep/1.3.0",
-      "folder": "eggd_vep",
+      "folder": "/eggd_vep",
       "input": {
         "vcf": {
           "$dnanexus_link": {
@@ -180,7 +180,7 @@
     {
       "id": "stage-eggd_vep_mutect2",
       "executable": "app-eggd_vep/1.3.0",
-      "folder": "eggd_vep",
+      "folder": "/eggd_vep",
       "input": {
         "vcf": {
           "$dnanexus_link": {
@@ -193,7 +193,7 @@
     {
       "id": "stage-eggd_vcf_rescue",
       "executable": "app-eggd_vcf_rescue/1.2.0",
-      "folder": "eggd_vcf_rescue",
+      "folder": "/eggd_vcf_rescue",
       "input": {
         "filtered_vcf": {
           "$dnanexus_link": {
@@ -211,8 +211,8 @@
     },
     {
       "id": "stage-eggd_generate_variant_workbook",
-      "executable": "app-eggd_generate_variant_workbook/2.10.1",
-      "folder": "eggd_generate_variant_workbook",
+      "executable": "app-eggd_generate_variant_workbook/2.10.2",
+      "folder": "/eggd_generate_variant_workbook",
       "input": {
         "vcfs":  [
           {
