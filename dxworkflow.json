@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v3.2.0",
-  "title": "uranus_main_workflow_GRCh38_v3.2.0",
+  "name": "uranus_main_workflow_GRCh38_v3.3.0",
+  "title": "uranus_main_workflow_GRCh38_v3.3.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -55,13 +55,25 @@
     },
     {
       "id": "stage-picard",
-      "executable": "app-eggd_picard_QC/1.1.0",
-      "folder": "/eggd_picardqc_v1.1.0",
+      "executable": "app-eggd_picard_QC/1.3.0",
+      "folder": "/eggd_picardqc_v1.3.0",
       "input": {
         "sorted_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_bwa"
+            }
+          },
+          "vcf": {
+            "$dnanexus_link": {
+              "stage": "stage-sentieon_tnbam",
+              "outputField": "variants_vcf"
+            }
+          },
+          "vcf_index": {
+            "$dnanexus_link": {
+              "stage":"stage-sentieon_tnbam",
+              "outputField": "variants_vcftbi"
           }
         }
       }
