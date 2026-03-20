@@ -1,6 +1,6 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v3.3.0",
-  "title": "uranus_main_workflow_GRCh38_v3.3.0",
+  "name": "uranus_main_workflow_GRCh38_v3.4.0",
+  "title": "uranus_main_workflow_GRCh38_v3.4.0",
   "summary": "Main workflow for Uranus pipeline",
   "stages": [
     {
@@ -177,14 +177,40 @@
       }
     },
     {
+      "id": "stage-vcf_normaliser_cgppindel",
+      "executable": "app-eggd_vcf_normaliser/1.0.0",
+      "folder": "/eggd_vcf_normaliser",
+      "input": {
+        "input_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-cgppindel",
+            "outputField": "output_vcf_with_vaf"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-vcf_normaliser_mutect2",
+      "executable": "app-eggd_vcf_normaliser/1.0.0",
+      "folder": "/eggd_vcf_normaliser",
+      "input": {
+        "input_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_tnbam",
+            "outputField": "variants_vcf"
+          }
+        }
+      }
+    },
+    {
       "id": "stage-eggd_vep_cgppindel",
       "executable": "app-eggd_vep/1.3.0",
       "folder": "/eggd_vep",
       "input": {
         "vcf": {
           "$dnanexus_link": {
-            "stage": "stage-cgppindel",
-            "outputField": "output_vcf_with_vaf"
+            "stage": "stage-vcf_normaliser_cgppindel",
+            "outputField": "output_vcf"
           }
         }
       }
@@ -196,8 +222,8 @@
       "input": {
         "vcf": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_tnbam",
-            "outputField": "variants_vcf"
+            "stage": "stage-vcf_normaliser_mutect2",
+            "outputField": "output_vcf"
           }
         }
       }
